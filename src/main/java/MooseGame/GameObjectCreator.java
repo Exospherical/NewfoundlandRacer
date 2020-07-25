@@ -3,15 +3,16 @@ package MooseGame;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.ProjectileComponent;
+import com.almasb.fxgl.dsl.views.ScrollingBackgroundView;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.EntityFactory;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.Spawns;
+import javafx.geometry.Orientation;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Rectangle;
 
-import static com.almasb.fxgl.dsl.FXGLForKtKt.getAppHeight;
-import static com.almasb.fxgl.dsl.FXGLForKtKt.getAppWidth;
+import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class GameObjectCreator implements EntityFactory {
 
@@ -19,13 +20,20 @@ public class GameObjectCreator implements EntityFactory {
      * TODO: Fill out the rest of the textures and animate to give the appearance of infinite scrolling.
      * @param data
      * @return
-     *
      */
     @Spawns("background")
     public Entity newBackground(SpawnData data){
+        /*
         return FXGL.entityBuilder()
                 .from(data)
-                .view("topdownroad.jpg")
+                .view("4lanehighway.png")
+                .build();
+         */
+        return FXGL.entityBuilder()
+                .type(EntityType.BACKGROUND)
+                .view(new ScrollingBackgroundView(getAssetLoader().loadTexture("4lanehighway.png", 840, 750),
+                        Orientation.VERTICAL))
+                .zIndex(-1)
                 .build();
     }
 

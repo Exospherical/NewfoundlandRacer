@@ -8,6 +8,7 @@ import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
@@ -23,8 +24,8 @@ public class NewfoundRacerApp extends GameApplication {
      */
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setWidth(700);
-        settings.setHeight(500);
+        settings.setWidth(840);
+        settings.setHeight(650);
         settings.setTitle("Newfoundland Moose Collision");
         settings.setVersion("0.1");
     }
@@ -73,16 +74,16 @@ public class NewfoundRacerApp extends GameApplication {
     @Override
     protected void initGame() {
         FXGL.getGameWorld().addEntityFactory(new GameObjectCreator());
-        spawn("background", 300, 150);
+        spawn("background", 0, 0);
         player = spawn("player", 300, 300);
-
-        //spawn("driver", 350, 350);
+        getGameScene().getViewport().bindToEntity(player, getAppWidth()/2, getAppHeight()/2);
+        getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
+        spawn("driver", 350, 0);
         getGameTimer().runAtInterval(this::spawnDriver, Duration.seconds(2));
     }
 
     public static void main(String[] args) {
         launch(args);
-
     }
 
     /**
