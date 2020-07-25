@@ -7,9 +7,15 @@ import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
+import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
+import kotlin.Unit;
+
+import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
@@ -39,21 +45,21 @@ public class NewfoundRacerApp extends GameApplication {
         input.addAction(new UserAction("Move Right") {
             @Override
             protected void onAction() {
-                player.rotateBy(5); // move right 5 pixels
+                player.rotateBy(5);
             }
         }, KeyCode.D);
 
         input.addAction(new UserAction("Move Left") {
             @Override
             protected void onAction() {
-                player.rotateBy(-5); // move left 5 pixels
+                player.rotateBy(-5);
             }
         }, KeyCode.A);
 
         input.addAction(new UserAction("Move Up") {
             @Override
             protected void onAction() {
-                Vec2 dir = Vec2.fromAngle(player.getRotation()).mulLocal(4);
+                Vec2 dir = Vec2.fromAngle(player.getRotation()).mulLocal(6);
                 player.translate(dir);
 
             }
@@ -78,19 +84,39 @@ public class NewfoundRacerApp extends GameApplication {
         player = spawn("player", 300, 300);
         getGameScene().getViewport().bindToEntity(player, getAppWidth()/2, getAppHeight()/2);
         getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
-        spawn("driver", 350, 0);
+        //spawn("driver", 350, 0);
+        spawn("coin", 350, 0);
+
         getGameTimer().runAtInterval(this::spawnDriver, Duration.seconds(2));
+    }
+    @Override
+    protected void initGameVars(Map<String, Object> vars){
+        vars.put("score", 0);
+
+    }
+    @Override
+    protected void initPhysics(){
+        var playerCollisionHandler = new PlayerCollisionHandler();
+        getPhysicsWorld().addCollisionHandler(playerCollisionHandler);
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+    @Override
+    protected void initUI() {
+        Text uiScore = new Text("");
+        uiScore.setFont(Font.font(72));
+        uiScore.setTranslateX(getAppWidth() - 200);
+        uiScore.setTranslateY(50);
+        uiScore.textProperty().bind(getip("score").asString());
+        addUINode(uiScore);
     }
 
     /**
      * This method is used to spawn a driver object on the road.
      */
     private void spawnDriver() {
-        getGameWorld().spawn("driver", 350, 350);
-
+        getGameWorld().spawn("driver", 475, -800);
     }
 }

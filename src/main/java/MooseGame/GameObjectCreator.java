@@ -11,6 +11,7 @@ import com.almasb.fxgl.entity.Spawns;
 import javafx.geometry.Orientation;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
@@ -61,10 +62,26 @@ public class GameObjectCreator implements EntityFactory {
     @Spawns("player")
     public Entity newPlayer(SpawnData data){
         return FXGL.entityBuilder()
+                .type(EntityType.Player)
                 .from(data)
                 .viewWithBBox("player.png").rotate(-90)
                 .collidable()
                 .with(new PlayerComponent())
                 .build();
     }
+
+    @Spawns("coin")
+    public Entity coin(SpawnData data){
+
+        return FXGL.entityBuilder()
+                .type(EntityType.COIN)
+                .from(data)
+                .viewWithBBox(texture("coin.png").toAnimatedTexture(6, Duration.seconds(0.66)).loop())
+                .collidable()
+                .with(new ProjectileComponent(new Point2D(0, -1), FXGLMath.random(50, 150)))
+                .rotate(90)
+                .scale(0.5,0.5)
+                .build();
+    }
+
 }
