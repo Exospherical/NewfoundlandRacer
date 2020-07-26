@@ -1,5 +1,5 @@
 package MooseGame;
 
 public enum EntityType {
-    Player, CARS, MOOSE, POTHOLE, DRIVER, BACKGROUND, COIN
+    Player, MOOSE, POTHOLE, DRIVER, BACKGROUND, COIN
 }

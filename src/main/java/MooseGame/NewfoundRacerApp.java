@@ -2,6 +2,7 @@ package MooseGame;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
+import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.core.math.Vec2;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
@@ -22,6 +23,9 @@ import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 public class NewfoundRacerApp extends GameApplication {
 
     private Entity player;
+    private int DRIVEUP = 1;
+    private int DRIVEDOWN = 0;
+    private int heightIncreaser = 50;
 
     /**
      * The settings for the game window.
@@ -84,10 +88,13 @@ public class NewfoundRacerApp extends GameApplication {
         player = spawn("player", 300, 300);
         getGameScene().getViewport().bindToEntity(player, getAppWidth()/2, getAppHeight()/2);
         getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
-        //spawn("driver", 350, 0);
-        spawn("coin", 350, 0);
 
-        getGameTimer().runAtInterval(this::spawnDriver, Duration.seconds(2));
+
+        //this function implements runnable allowing parameters to be passed
+        getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(0.5));
+        getGameTimer().runAtInterval(this::incrementHeight , Duration.seconds(2));
+        getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(10));
+
     }
     @Override
     protected void initGameVars(Map<String, Object> vars){
@@ -103,6 +110,9 @@ public class NewfoundRacerApp extends GameApplication {
     public static void main(String[] args) {
         launch(args);
     }
+    /**
+    TODO: maybe make every few seconds alive gives a point too?
+     */
     @Override
     protected void initUI() {
         Text uiScore = new Text("");
@@ -114,9 +124,49 @@ public class NewfoundRacerApp extends GameApplication {
     }
 
     /**
-     * This method is used to spawn a driver object on the road.
+     * This method is used to spawn a driver object on the road, in one of the 4 lanes randomly.
+     * TODO: Add slightly random x-axis variation to make game more interesting
      */
     private void spawnDriver() {
-        getGameWorld().spawn("driver", 475, -800);
+        int lane = FXGL.random(0,3);
+            if (lane == 0) {
+                getGameWorld().spawn("driver", 595, -getAppHeight() - heightIncreaser);
+            }
+            else if (lane == 1) {
+                getGameWorld().spawn("driver", 450, -getAppHeight()- heightIncreaser);
+            }
+            else if (lane == 2) {
+                getGameWorld().spawn("driver", 350, -getAppHeight()- heightIncreaser);
+            }
+            else if (lane == 3) {
+                getGameWorld().spawn("driver", 175, -getAppHeight()- heightIncreaser);
+            }
+    }
+
+    /**
+     * TODO: Add slight random x-axis variation to make game more interesting
+     */
+    private void spawnCoin(){
+        int lane = FXGL.random(0,3);
+        if (lane == 0) {
+            getGameWorld().spawn("coin", 595, -getAppHeight() - heightIncreaser);
+        }
+        else if (lane == 1) {
+            getGameWorld().spawn("coin", 450, -getAppHeight()- heightIncreaser);
+        }
+        else if (lane == 2) {
+            getGameWorld().spawn("coin", 350, -getAppHeight()- heightIncreaser);
+        }
+        else if (lane == 3) {
+            getGameWorld().spawn("coin", 175, -getAppHeight()- heightIncreaser);
+        }
+    }
+
+    private int incrementHeight(){
+        heightIncreaser += 800;
+        System.out.println(heightIncreaser);
+
+        return heightIncreaser;
+
     }
 }

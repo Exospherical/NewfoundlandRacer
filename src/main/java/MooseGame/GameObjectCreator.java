@@ -47,9 +47,10 @@ public class GameObjectCreator implements EntityFactory {
     @Spawns("driver")
     public Entity newDriver(SpawnData data){
         return FXGL.entityBuilder()
+                .type(EntityType.DRIVER)
                 .from(data)
                 .viewWithBBox("driver.png").rotate(-90)
-                .with(new ProjectileComponent(new Point2D(0, -1), FXGLMath.random(50, 150)))
+                .with(new ProjectileComponent(new Point2D(0, -1), 150))
                 .collidable()
                 .build();
     }
@@ -72,16 +73,14 @@ public class GameObjectCreator implements EntityFactory {
 
     @Spawns("coin")
     public Entity coin(SpawnData data){
-
         return FXGL.entityBuilder()
                 .type(EntityType.COIN)
                 .from(data)
                 .viewWithBBox(texture("coin.png").toAnimatedTexture(6, Duration.seconds(0.66)).loop())
                 .collidable()
-                .with(new ProjectileComponent(new Point2D(0, -1), FXGLMath.random(50, 150)))
+                .with(new ProjectileComponent(new Point2D(0, -1), 150))
                 .rotate(90)
                 .scale(0.5,0.5)
                 .build();
     }
-
 }
