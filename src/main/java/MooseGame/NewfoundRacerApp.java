@@ -2,21 +2,16 @@ package MooseGame;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
-import com.almasb.fxgl.core.math.FXGLMath;
+import com.almasb.fxgl.app.scene.SceneFactory;
 import com.almasb.fxgl.core.math.Vec2;
 import com.almasb.fxgl.dsl.FXGL;
-import com.almasb.fxgl.dsl.components.ExpireCleanComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
-import javafx.geometry.Point2D;
-import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import kotlin.Unit;
 
 import java.util.Map;
 
@@ -40,6 +35,17 @@ public class NewfoundRacerApp extends GameApplication {
         settings.setHeight(650);
         settings.setTitle("Newfoundland Moose Collision");
         settings.setVersion("0.1");
+        settings.setMainMenuEnabled(true);
+        settings.setSceneFactory(new SceneFactory(){
+            @Override
+            public NewfoundlandRacerMainMenu newMainMenu(){
+                return new NewfoundlandRacerMainMenu();
+
+            }
+                                 }
+
+        );
+
     }
 
     /**
