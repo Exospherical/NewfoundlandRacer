@@ -5,9 +5,11 @@ import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.core.math.Vec2;
 import com.almasb.fxgl.dsl.FXGL;
+import com.almasb.fxgl.dsl.components.ExpireCleanComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
+import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -89,18 +91,21 @@ public class NewfoundRacerApp extends GameApplication {
         getGameScene().getViewport().bindToEntity(player, getAppWidth()/2, getAppHeight()/2);
         getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
 
-
         //this function implements runnable allowing parameters to be passed
         getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(0.5));
         getGameTimer().runAtInterval(this::incrementHeight , Duration.seconds(2));
         getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(10));
-
     }
+
+    /**
+     * Contains game variables, like score
+     * @param vars
+     */
     @Override
     protected void initGameVars(Map<String, Object> vars){
         vars.put("score", 0);
-
     }
+
     @Override
     protected void initPhysics(){
         var playerCollisionHandler = new PlayerCollisionHandler();
@@ -110,6 +115,7 @@ public class NewfoundRacerApp extends GameApplication {
     public static void main(String[] args) {
         launch(args);
     }
+
     /**
     TODO: maybe make every few seconds alive gives a point too?
      */
@@ -164,8 +170,8 @@ public class NewfoundRacerApp extends GameApplication {
 
     private int incrementHeight(){
         heightIncreaser += 800;
-        System.out.println(heightIncreaser);
-
+        //System.out.println(player.getX());
+       // System.out.println(player.getY());
         return heightIncreaser;
 
     }

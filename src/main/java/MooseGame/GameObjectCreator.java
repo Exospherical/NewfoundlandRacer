@@ -2,6 +2,7 @@ package MooseGame;
 
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
+import com.almasb.fxgl.dsl.components.ExpireCleanComponent;
 import com.almasb.fxgl.dsl.components.ProjectileComponent;
 import com.almasb.fxgl.dsl.views.ScrollingBackgroundView;
 import com.almasb.fxgl.entity.Entity;
@@ -10,7 +11,9 @@ import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.Spawns;
 import javafx.geometry.Orientation;
 import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
@@ -49,7 +52,7 @@ public class GameObjectCreator implements EntityFactory {
         return FXGL.entityBuilder()
                 .type(EntityType.DRIVER)
                 .from(data)
-                .viewWithBBox("driver.png").rotate(-90)
+                .viewWithBBox("driver" + FXGL.random(0,4)+".png").rotate(-90)
                 .with(new ProjectileComponent(new Point2D(0, -1), 150))
                 .collidable()
                 .build();
