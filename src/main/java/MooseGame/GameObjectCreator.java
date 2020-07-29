@@ -86,4 +86,17 @@ public class GameObjectCreator implements EntityFactory {
                 .scale(0.5,0.5)
                 .build();
     }
+
+    @Spawns("moose")
+    public Entity moose(SpawnData data){
+        return FXGL.entityBuilder()
+                .type(EntityType.MOOSE)
+                .from(data)
+                .viewWithBBox(texture("cowmoosespriterunning.png").toAnimatedTexture(3, Duration.seconds(0.6)).loop())
+                .collidable()
+                .with(new ProjectileComponent(new Point2D(-1, 0), 150))
+                .rotate(180)
+                //.scale(0.5,0.5)
+                .build();
+    }
 }

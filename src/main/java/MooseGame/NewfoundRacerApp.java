@@ -12,16 +12,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-
 import java.util.Map;
-
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class NewfoundRacerApp extends GameApplication {
-
     private Entity player;
-    private int DRIVEUP = 1;
-    private int DRIVEDOWN = 0;
     private int heightIncreaser = 50;
 
     /**
@@ -40,12 +35,9 @@ public class NewfoundRacerApp extends GameApplication {
             @Override
             public NewfoundlandRacerMainMenu newMainMenu(){
                 return new NewfoundlandRacerMainMenu();
-
             }
                                  }
-
         );
-
     }
 
     /**
@@ -100,6 +92,7 @@ public class NewfoundRacerApp extends GameApplication {
         //this function implements runnable allowing parameters to be passed
         getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(0.5));
         getGameTimer().runAtInterval(this::incrementHeight , Duration.seconds(2));
+        getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(2));
         getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(10));
     }
 
@@ -114,8 +107,11 @@ public class NewfoundRacerApp extends GameApplication {
 
     @Override
     protected void initPhysics(){
-        var playerCollisionHandler = new PlayerCollisionHandler();
-        getPhysicsWorld().addCollisionHandler(playerCollisionHandler);
+        var coinCollisionHandler = new CoinCollisionHandler();
+        var MooseCollisionHandler = new MooseCollisionHandler();
+        getPhysicsWorld().addCollisionHandler(coinCollisionHandler);
+        getPhysicsWorld().addCollisionHandler(MooseCollisionHandler);
+
     }
 
     public static void main(String[] args) {
@@ -153,6 +149,10 @@ public class NewfoundRacerApp extends GameApplication {
             else if (lane == 3) {
                 getGameWorld().spawn("driver", 175, -getAppHeight()- heightIncreaser);
             }
+    }
+
+    private void spawnMoose() {
+        getGameWorld().spawn("moose", 800, player.getY()-200);
     }
 
     /**
