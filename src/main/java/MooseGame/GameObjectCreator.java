@@ -3,6 +3,7 @@ package MooseGame;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.ExpireCleanComponent;
+import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.dsl.components.ProjectileComponent;
 import com.almasb.fxgl.dsl.views.ScrollingBackgroundView;
 import com.almasb.fxgl.entity.Entity;
@@ -55,6 +56,8 @@ public class GameObjectCreator implements EntityFactory {
                 .viewWithBBox("driver" + FXGL.random(0,4)+".png").rotate(-90)
                 .with(new ProjectileComponent(new Point2D(0, -1), 150))
                 .collidable()
+                //.with(new OffscreenCleanComponent())
+                 .scale(1.5,1.5)
                 .build();
     }
 
@@ -67,8 +70,9 @@ public class GameObjectCreator implements EntityFactory {
     public Entity newPlayer(SpawnData data){
         return FXGL.entityBuilder()
                 .type(EntityType.Player)
-                .from(data)
+                //.from(data)
                 .viewWithBBox("player.png").rotate(-90)
+                .scale(1.5,1.5)
                 .collidable()
                 .with(new PlayerComponent())
                 .build();
@@ -96,7 +100,20 @@ public class GameObjectCreator implements EntityFactory {
                 .collidable()
                 .with(new ProjectileComponent(new Point2D(-1, 0), 150))
                 .rotate(180)
-                //.scale(0.5,0.5)
+                .scale(1.5,1.5)
+                .build();
+    }
+
+    @Spawns("pothole")
+    public Entity pothole(SpawnData data){
+        return FXGL.entityBuilder()
+                .type(EntityType.POTHOLE)
+                .from(data)
+                .viewWithBBox("pothole.png")
+                .collidable()
+                //.with(new ProjectileComponent(new Point2D(-1, 0), 150))
+               // .rotate(180)
+                .scale(0.15,0.15)
                 .build();
     }
 }

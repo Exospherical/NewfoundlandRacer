@@ -5,6 +5,7 @@ import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.SceneFactory;
 import com.almasb.fxgl.core.math.Vec2;
 import com.almasb.fxgl.dsl.FXGL;
+import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
@@ -49,21 +50,21 @@ public class NewfoundRacerApp extends GameApplication {
         input.addAction(new UserAction("Move Right") {
             @Override
             protected void onAction() {
-                player.rotateBy(5);
+                player.rotateBy(4);
             }
         }, KeyCode.D);
 
         input.addAction(new UserAction("Move Left") {
             @Override
             protected void onAction() {
-                player.rotateBy(-5);
+                player.rotateBy(-4);
             }
         }, KeyCode.A);
 
         input.addAction(new UserAction("Move Up") {
             @Override
             protected void onAction() {
-                Vec2 dir = Vec2.fromAngle(player.getRotation()).mulLocal(6);
+                Vec2 dir = Vec2.fromAngle(player.getRotation()).mulLocal(4);
                 player.translate(dir);
 
             }
@@ -85,19 +86,22 @@ public class NewfoundRacerApp extends GameApplication {
     protected void initGame() {
         FXGL.getGameWorld().addEntityFactory(new GameObjectCreator());
         spawn("background", 0, 0);
-        player = spawn("player", 300, 300);
+        player = spawn("player", 600, 300);
         getGameScene().getViewport().bindToEntity(player, getAppWidth()/2, getAppHeight()/2);
         getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
-
         //this function implements runnable allowing parameters to be passed
-        getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(0.5));
-        getGameTimer().runAtInterval(this::incrementHeight , Duration.seconds(2));
+        getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(3));
+        getGameTimer().runAtInterval(this::spawnPotHole , Duration.seconds(5));
         getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(2));
         getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(10));
+        getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(2));
+        getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
+
+
     }
 
     /**
-     * Contains game variables, like score
+     * Contains game variables, like score.
      * @param vars
      */
     @Override
@@ -108,10 +112,13 @@ public class NewfoundRacerApp extends GameApplication {
     @Override
     protected void initPhysics(){
         var coinCollisionHandler = new CoinCollisionHandler();
-        var MooseCollisionHandler = new MooseCollisionHandler();
+        var mooseCollisionHandler = new MooseCollisionHandler();
+        var driverCollisionHandler = new DriverCollisionHandler();
+        var potHoleCollisionHandler = new PotHoleCollisionHandler();
         getPhysicsWorld().addCollisionHandler(coinCollisionHandler);
-        getPhysicsWorld().addCollisionHandler(MooseCollisionHandler);
-
+        getPhysicsWorld().addCollisionHandler(mooseCollisionHandler);
+        getPhysicsWorld().addCollisionHandler(driverCollisionHandler);
+        getPhysicsWorld().addCollisionHandler(potHoleCollisionHandler);
     }
 
     public static void main(String[] args) {
@@ -138,39 +145,55 @@ public class NewfoundRacerApp extends GameApplication {
     private void spawnDriver() {
         int lane = FXGL.random(0,3);
             if (lane == 0) {
-                getGameWorld().spawn("driver", 595, -getAppHeight() - heightIncreaser);
+                getGameWorld().spawn("driver", 595, player.getY()-400);
             }
             else if (lane == 1) {
-                getGameWorld().spawn("driver", 450, -getAppHeight()- heightIncreaser);
+                getGameWorld().spawn("driver", 450, player.getY()-400);
+
             }
             else if (lane == 2) {
-                getGameWorld().spawn("driver", 350, -getAppHeight()- heightIncreaser);
+                getGameWorld().spawn("driver", 350, player.getY()-400);
             }
             else if (lane == 3) {
-                getGameWorld().spawn("driver", 175, -getAppHeight()- heightIncreaser);
+                getGameWorld().spawn("driver", 175, player.getY()-400);
             }
     }
 
     private void spawnMoose() {
         getGameWorld().spawn("moose", 800, player.getY()-200);
     }
-
     /**
      * TODO: Add slight random x-axis variation to make game more interesting
      */
     private void spawnCoin(){
         int lane = FXGL.random(0,3);
         if (lane == 0) {
-            getGameWorld().spawn("coin", 595, -getAppHeight() - heightIncreaser);
+            getGameWorld().spawn("coin", 595, player.getY()-400);
         }
         else if (lane == 1) {
-            getGameWorld().spawn("coin", 450, -getAppHeight()- heightIncreaser);
+            getGameWorld().spawn("coin", 450, player.getY()-400);
         }
         else if (lane == 2) {
-            getGameWorld().spawn("coin", 350, -getAppHeight()- heightIncreaser);
+            getGameWorld().spawn("coin", 350, player.getY()-400);
         }
         else if (lane == 3) {
-            getGameWorld().spawn("coin", 175, -getAppHeight()- heightIncreaser);
+            getGameWorld().spawn("coin", 175, player.getY()-400);
+        }
+    }
+
+    private void spawnPotHole() {
+        int lane = FXGL.random(0, 3);
+        if (lane == 0) {
+            getGameWorld().spawn("pothole", 100, player.getY() -800);
+           // System.out.println("ur busted");
+
+        } else if (lane == 1) {
+            getGameWorld().spawn("pothole", 200, player.getY() -800);
+
+        } else if (lane == 2) {
+            getGameWorld().spawn("pothole", -100, player.getY() -800);
+        } else if (lane == 3) {
+            getGameWorld().spawn("pothole", -200, player.getY() -800);
         }
     }
 

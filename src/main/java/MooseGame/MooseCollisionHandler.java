@@ -1,5 +1,6 @@
 package MooseGame;
 
+import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.physics.CollisionHandler;
@@ -13,12 +14,8 @@ public class MooseCollisionHandler extends CollisionHandler {
     }
     @Override
     protected void onCollisionBegin(Entity Player, Entity MOOSE) {
-
-        //spawn("scoreText", new SpawnData(200, 500));
         MOOSE.removeFromWorld();
-        //inc("score", +100);
-        //play("coincollect.wav");
+       // showMessage("You Hit  A  Moose and Died!");
+       // FXGL.getGameController().gotoGameMenu();
     }
-
-
 }
