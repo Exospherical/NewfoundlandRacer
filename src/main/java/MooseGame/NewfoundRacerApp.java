@@ -86,16 +86,15 @@ public class NewfoundRacerApp extends GameApplication {
     protected void initGame() {
         FXGL.getGameWorld().addEntityFactory(new GameObjectCreator());
         spawn("background", 0, 0);
-        player = spawn("player", 600, 300);
+        player = spawn("player", 300, 300);
         getGameScene().getViewport().bindToEntity(player, getAppWidth()/2, getAppHeight()/2);
         getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
         //this function implements runnable allowing parameters to be passed
         getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(3));
         getGameTimer().runAtInterval(this::spawnPotHole , Duration.seconds(5));
-        getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(2));
-        getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(10));
-        getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(2));
-        getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
+        getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(12));
+        getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(10));
+        //getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
 
 
     }
