@@ -7,6 +7,8 @@ import javafx.beans.binding.StringBinding;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -22,9 +24,34 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
     public NewfoundlandRacerMainMenu() {
         super(MenuType.MAIN_MENU);
         mainScreen = CreateMainScreen();
+        optionsScreen = CreateOptionsScreen();
         mainScreen.setTranslateX(getAppWidth()/2 - 200/2);
         mainScreen.setTranslateY(getAppHeight()/2-40/2);
         getMenuContentRoot().getChildren().addAll(mainScreen);
+//        ShowMainMenu();
+    }
+
+    /**
+     * Busted
+     * @return
+     */
+    private void ShowMainMenu(){
+        getContentRoot().getChildren().remove(0);
+        //ImageView bg = new ImageView("mainmenu.jpg");
+        ///getContentRoot().getChildren().add(0,bg);
+        getMenuContentRoot().getChildren().clear();
+        getMenuContentRoot().getChildren().addAll(mainScreen);
+    }
+
+    /**
+     * Busted
+     */
+    private void ShowOptionsMenu(){
+        getContentRoot().getChildren().remove(0);
+        //ImageView bg = new ImageView("opt.jpg");
+        //getContentRoot().getChildren().add(0,bg);
+        getMenuContentRoot().getChildren().clear();
+        getMenuContentRoot().getChildren().addAll(optionsScreen);
     }
 
     private Node CreateMainScreen(){
@@ -33,24 +60,89 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         mainBox.setPrefSize(200.0, 40.0);
         Button startGameButton = new Button("Start New Game");
         Button gameOptionsButton = new Button("Options");
-        Button carChooserButton = new Button("Choose Car");
-        Button highScoreButton = new Button("High Scores");
         Button exitGameButton = new Button("Exit Game");
         startGameButton.setAlignment(Pos.TOP_CENTER);
         startGameButton.setOnAction((event) -> {fireNewGame();});
+        gameOptionsButton.setOnAction((event) -> {CreateOptionsScreen();});
         exitGameButton.setOnAction((event) -> {fireExit();});
+        String hoverStyle = "-fx-background-color:#0000ff";
+        String quitStyle = "-fx-background-color:#ff0000";
+        String regularStyle = "-fx-background-color:#ffffff";
+        startGameButton.setStyle(regularStyle);
+        gameOptionsButton.setStyle(regularStyle);
+        exitGameButton.setStyle(regularStyle);
+
         mainBox.getChildren().add(startGameButton);
+        mainBox.getChildren().add(gameOptionsButton);
         mainBox.getChildren().add(exitGameButton);
+        startGameButton.setOnMouseEntered((event) -> startGameButton.setStyle(hoverStyle) );
+        startGameButton.setOnMouseExited((event) -> startGameButton.setStyle(regularStyle) );
+
+        gameOptionsButton.setOnMouseEntered((event) -> gameOptionsButton.setStyle(hoverStyle) );
+        gameOptionsButton.setOnMouseExited((event) -> gameOptionsButton.setStyle(regularStyle) );
+
+        exitGameButton.setOnMouseEntered((event) -> exitGameButton.setStyle(quitStyle) );
+        exitGameButton.setOnMouseExited((event) -> exitGameButton.setStyle(regularStyle) );
 
 
         return  mainBox;
     }
-//    private Node CreateOptionsScreen(){
-//
-//    }
-//    private Node CreateCarScreen(){
-//
-//    }
+    private void selectFirstCar(){
+
+    }
+    private void selectSecondCar(){
+
+    }
+    private void selectThirdCar(){
+
+    }
+    private void selectFourthCar(){
+
+    }
+    private Node CreateOptionsScreen(){
+
+
+        VBox optionsBox = new VBox();
+        optionsBox.setAlignment(Pos.CENTER);
+        optionsBox.setPrefSize(200.0, 40.0);
+        Button mainmenuButton = new Button("Back");
+        Button carChooserButton = new Button("Choose Car");
+        Button highScoreButton = new Button("High Scores");
+
+        optionsBox.getChildren().add(carChooserButton);
+        optionsBox.getChildren().add(highScoreButton);
+        optionsBox.getChildren().add(mainmenuButton);
+
+        return optionsBox;
+    }
+    private Node CreateCarScreen(){
+        StackPane pane = new StackPane();
+        pane.setPrefSize(800.0,600.0);
+        pane.setAlignment(Pos.CENTER);
+
+        VBox carBox = new VBox();
+        carBox.setAlignment(Pos.CENTER);
+        carBox.setPrefSize(200.0, 40.0);
+        Button mainmenuButton = new Button("Back");
+        Button firstCarButton = new Button("Car One");
+        firstCarButton.setOnAction((event) -> {selectFirstCar();});
+        carBox.getChildren().add(firstCarButton);
+
+        Button secondCarButton = new Button("Car Two");
+        firstCarButton.setOnAction((event) -> {selectSecondCar();});
+        carBox.getChildren().add(firstCarButton);
+
+        Button thirdCarButton = new Button("Car Three");
+        firstCarButton.setOnAction((event) -> {selectThirdCar();});
+        carBox.getChildren().add(firstCarButton);
+
+        Button fourthCarButton = new Button("Car Four");
+        fourthCarButton.setOnAction((event) -> {selectFourthCar();});
+        carBox.getChildren().add(firstCarButton);
+
+        carBox.getChildren().add(mainmenuButton);
+        return carBox;
+    }
 //    private Node CreateHighScoreScreen(){
 //
 //    }

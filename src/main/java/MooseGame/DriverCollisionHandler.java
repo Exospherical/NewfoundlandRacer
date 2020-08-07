@@ -17,6 +17,6 @@ public class DriverCollisionHandler extends CollisionHandler {
     protected void onCollisionBegin(Entity Player, Entity DRIVER) {
         //DRIVER.removeFromWorld();
          showMessage("You Hit a Car and Died!");
-        // FXGL.getGameController().gotoGameMenu();
+        //FXGL.getGameController().gotoGameMenu();
     }
 }
