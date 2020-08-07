@@ -18,7 +18,7 @@ import javafx.scene.text.Text;
 public class NewfoundlandRacerMainMenu extends FXGLMenu {
     private Node mainScreen;
     private Node highScoreScreen;
-    private Node carChooserScreen;
+    private StackPane carChooserScreen;
     private Node optionsScreen;
 
     public NewfoundlandRacerMainMenu() {
@@ -87,18 +87,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
         return  mainBox;
     }
-    private void selectFirstCar(){
 
-    }
-    private void selectSecondCar(){
 
-    }
-    private void selectThirdCar(){
-
-    }
-    private void selectFourthCar(){
-
-    }
     private Node CreateOptionsScreen(){
 
 
@@ -115,7 +105,29 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
         return optionsBox;
     }
-    private Node CreateCarScreen(){
+
+    private void selectFirstCar(){
+        carChooserScreen.getChildren().remove(1);
+        ImageView carView = new ImageView("TopDownAMCar.jpg");
+        carChooserScreen.getChildren().add(carView);
+    }
+    private void selectSecondCar(){
+        carChooserScreen.getChildren().remove(1);
+        ImageView carView = new ImageView("TopDownAMCar2.jpg");
+        carChooserScreen.getChildren().add(carView);
+    }
+    private void selectThirdCar(){
+        carChooserScreen.getChildren().remove(1);
+        ImageView carView = new ImageView("TopDownAMCar3.jpg");
+        carChooserScreen.getChildren().add(carView);
+    }
+    private void selectFourthCar(){
+        carChooserScreen.getChildren().remove(1);
+        ImageView carView = new ImageView("TopDownAMCar4.jpg");
+        carChooserScreen.getChildren().add(carView);
+    }
+
+    private StackPane CreateCarScreen(){
         StackPane pane = new StackPane();
         pane.setPrefSize(800.0,600.0);
         pane.setAlignment(Pos.CENTER);
@@ -141,7 +153,10 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         carBox.getChildren().add(firstCarButton);
 
         carBox.getChildren().add(mainmenuButton);
-        return carBox;
+
+        ImageView carView = new ImageView("TopDownAMCar.jpg");
+        pane.getChildren().add(carView);
+        return pane;
     }
 //    private Node CreateHighScoreScreen(){
 //
