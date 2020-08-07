@@ -16,7 +16,7 @@ public class PotHoleCollisionHandler extends CollisionHandler {
     @Override
     protected void onCollisionBegin(Entity Player, Entity DRIVER) {
         //DRIVER.removeFromWorld();
-        showMessage("You Hit  A  Pothole and Died!");
+        showMessage("You Hit a Pothole and Died!");
         // FXGL.getGameController().gotoGameMenu();
     }
 }

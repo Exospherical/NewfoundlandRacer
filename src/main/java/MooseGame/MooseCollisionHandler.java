@@ -15,7 +15,7 @@ public class MooseCollisionHandler extends CollisionHandler {
     @Override
     protected void onCollisionBegin(Entity Player, Entity MOOSE) {
         MOOSE.removeFromWorld();
-       // showMessage("You Hit  A  Moose and Died!");
+       // showMessage("You Hit a Moose and Died!");
        // FXGL.getGameController().gotoGameMenu();
     }
 }

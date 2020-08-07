@@ -16,7 +16,7 @@ public class DriverCollisionHandler extends CollisionHandler {
     @Override
     protected void onCollisionBegin(Entity Player, Entity DRIVER) {
         //DRIVER.removeFromWorld();
-         showMessage("You Hit  A  car and Died!");
+         showMessage("You Hit a Car and Died!");
         // FXGL.getGameController().gotoGameMenu();
     }
 }
