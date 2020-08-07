@@ -25,6 +25,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         super(MenuType.MAIN_MENU);
         mainScreen = CreateMainScreen();
         optionsScreen = CreateOptionsScreen();
+        carChooserScreen = CreateCarScreen();
+        highScoreScreen = CreateHighScoreScreen();
         mainScreen.setTranslateX(getAppWidth()/2 - 200/2);
         mainScreen.setTranslateY(getAppHeight()/2-40/2);
         getMenuContentRoot().getChildren().addAll(mainScreen);
@@ -142,15 +144,15 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
         Button secondCarButton = new Button("Car Two");
         firstCarButton.setOnAction((event) -> {selectSecondCar();});
-        carBox.getChildren().add(firstCarButton);
+        carBox.getChildren().add(secondCarButton);
 
         Button thirdCarButton = new Button("Car Three");
         firstCarButton.setOnAction((event) -> {selectThirdCar();});
-        carBox.getChildren().add(firstCarButton);
+        carBox.getChildren().add(thirdCarButton);
 
         Button fourthCarButton = new Button("Car Four");
         fourthCarButton.setOnAction((event) -> {selectFourthCar();});
-        carBox.getChildren().add(firstCarButton);
+        carBox.getChildren().add(fourthCarButton);
 
         carBox.getChildren().add(mainmenuButton);
 
@@ -158,9 +160,13 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         pane.getChildren().add(carView);
         return pane;
     }
-//    private Node CreateHighScoreScreen(){
-//
-//    }
+    private Node CreateHighScoreScreen(){
+        VBox highScoreBox = new VBox();
+        highScoreBox.setPrefSize(800.0,600.0);
+        highScoreBox.setAlignment(Pos.CENTER);
+
+        return highScoreBox;
+    }
 
 
     @Override
