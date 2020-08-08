@@ -55,12 +55,27 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(optionsScreen);
     }
+
+    /**
+     * Busted
+     */
     private void ShowCarMenu(){
         getContentRoot().getChildren().remove(0);
         //ImageView bg = new ImageView("opt.jpg");
         //getContentRoot().getChildren().add(0,bg);
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(carChooserScreen);
+    }
+
+    /**
+     * Busted
+     */
+    private void ShowScoreMenu(){
+        getContentRoot().getChildren().remove(0);
+        //ImageView bg = new ImageView("opt.jpg");
+        //getContentRoot().getChildren().add(0,bg);
+        getMenuContentRoot().getChildren().clear();
+        getMenuContentRoot().getChildren().addAll(highScoreScreen);
     }
 
     private Node CreateMainScreen(){
