@@ -55,6 +55,13 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(optionsScreen);
     }
+    private void ShowCarMenu(){
+        getContentRoot().getChildren().remove(0);
+        //ImageView bg = new ImageView("opt.jpg");
+        //getContentRoot().getChildren().add(0,bg);
+        getMenuContentRoot().getChildren().clear();
+        getMenuContentRoot().getChildren().addAll(carChooserScreen);
+    }
 
     private Node CreateMainScreen(){
         VBox mainBox = new VBox();
