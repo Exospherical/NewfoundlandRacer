@@ -4,22 +4,27 @@ import com.almasb.fxgl.app.scene.FXGLMenu;
 import com.almasb.fxgl.app.scene.MenuType;
 import com.almasb.fxgl.dsl.FXGL;
 import javafx.beans.binding.StringBinding;
+import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+
+import java.io.FileInputStream;
 
 public class NewfoundlandRacerMainMenu extends FXGLMenu {
     private Node mainScreen;
     private Node highScoreScreen;
     private StackPane carChooserScreen;
     private Node optionsScreen;
+    private final String currentdirectory = System.getProperty("user.dir");
+
 
     public NewfoundlandRacerMainMenu() {
         super(MenuType.MAIN_MENU);
@@ -30,7 +35,9 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         mainScreen.setTranslateX(getAppWidth()/2 - 200/2);
         mainScreen.setTranslateY(getAppHeight()/2-40/2);
         getMenuContentRoot().getChildren().addAll(mainScreen);
-//        ShowMainMenu();
+        ShowMainMenu();
+        //mainScreen.getParent().setTranslateY(200);
+       // mainScreen.getParent().setTranslateX(350);
     }
 
     /**
@@ -39,9 +46,11 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void ShowMainMenu(){
         getContentRoot().getChildren().remove(0);
-        //ImageView bg = new ImageView("mainmenu.jpg");
-        ///getContentRoot().getChildren().add(0,bg);
+        ImageView bg = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/mainmenu.jpg");
+
+        getContentRoot().getChildren().add(0,bg);
         getMenuContentRoot().getChildren().clear();
+
         getMenuContentRoot().getChildren().addAll(mainScreen);
     }
 
@@ -50,10 +59,12 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void ShowOptionsMenu(){
         getContentRoot().getChildren().remove(0);
-        //ImageView bg = new ImageView("opt.jpg");
-        //getContentRoot().getChildren().add(0,bg);
+        ImageView bg = new ImageView("file:"+currentdirectory+"/src/main/resources/assets/textures/opt.jpg");
+       // getContentRoot().getChildren().add(0,bg);
+        //System.out.println(getContentRoot().getChildren().get(0));
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(optionsScreen);
+
     }
 
     /**
@@ -61,8 +72,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void ShowCarMenu(){
         getContentRoot().getChildren().remove(0);
-        //ImageView bg = new ImageView("opt.jpg");
-        //getContentRoot().getChildren().add(0,bg);
+        ImageView bg = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/opt.jpg");
+        getContentRoot().getChildren().add(0,bg);
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(carChooserScreen);
     }
@@ -72,8 +83,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void ShowScoreMenu(){
         getContentRoot().getChildren().remove(0);
-        //ImageView bg = new ImageView("opt.jpg");
-        //getContentRoot().getChildren().add(0,bg);
+        ImageView bg = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/opt.jpg");
+        getContentRoot().getChildren().add(0,bg);
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(highScoreScreen);
     }
@@ -81,7 +92,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
     private Node CreateMainScreen(){
         VBox mainBox = new VBox();
         mainBox.setAlignment(Pos.CENTER);
-        mainBox.setPrefSize(200.0, 40.0);
+        //mainBox.setPrefSize(getAppWidth()/2-200, getAppHeight()/2-300);
+
         Button startGameButton = new Button("Start New Game");
         Button gameOptionsButton = new Button("Options");
         Button exitGameButton = new Button("Exit Game");
@@ -96,6 +108,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         gameOptionsButton.setStyle(regularStyle);
         exitGameButton.setStyle(regularStyle);
 
+
+
         mainBox.getChildren().add(startGameButton);
         mainBox.getChildren().add(gameOptionsButton);
         mainBox.getChildren().add(exitGameButton);
@@ -104,50 +118,68 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
         gameOptionsButton.setOnMouseEntered((event) -> gameOptionsButton.setStyle(hoverStyle) );
         gameOptionsButton.setOnMouseExited((event) -> gameOptionsButton.setStyle(regularStyle) );
+        //set on click event for options menu
+        gameOptionsButton.setOnAction((event) -> ShowOptionsMenu() );
+
 
         exitGameButton.setOnMouseEntered((event) -> exitGameButton.setStyle(quitStyle) );
         exitGameButton.setOnMouseExited((event) -> exitGameButton.setStyle(regularStyle) );
-
 
         return  mainBox;
     }
 
 
     private Node CreateOptionsScreen(){
+        GridPane optionsBox = new GridPane();
 
+        String backgroundImageURL = "file:"+currentdirectory+"/src/main/resources/assets/textures/opt.jpg";
 
-        VBox optionsBox = new VBox();
+        Image image = new Image(backgroundImageURL);
+        ImageView imageView = new ImageView(image);
+
         optionsBox.setAlignment(Pos.CENTER);
-        optionsBox.setPrefSize(200.0, 40.0);
+        optionsBox.setPrefSize(800.0, 600.0);
         Button mainmenuButton = new Button("Back");
         Button carChooserButton = new Button("Choose Car");
         Button highScoreButton = new Button("High Scores");
+        mainmenuButton.setOnAction((event) -> ShowMainMenu() );
+
+
+        optionsBox.getChildren().add(imageView);
+        GridPane.setHalignment(imageView, HPos.CENTER);
+
 
         optionsBox.getChildren().add(carChooserButton);
+        GridPane.setHalignment(carChooserButton, HPos.LEFT);
+
         optionsBox.getChildren().add(highScoreButton);
+        GridPane.setHalignment(highScoreButton, HPos.RIGHT);
+
         optionsBox.getChildren().add(mainmenuButton);
+        GridPane.setHalignment(mainmenuButton, HPos.CENTER);
+
 
         return optionsBox;
     }
 
     private void selectFirstCar(){
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("TopDownAMCar.jpg");
+        ImageView carView = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/TopDownAMCar.jpg");
         carChooserScreen.getChildren().add(carView);
     }
     private void selectSecondCar(){
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("TopDownAMCar2.jpg");
+        ImageView carView = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/TopDownAMCar2.jpg");
         carChooserScreen.getChildren().add(carView);
     }
     private void selectThirdCar(){
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("TopDownAMCar3.jpg");
+        ImageView carView = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/TopDownAMCar3.jpg");
         carChooserScreen.getChildren().add(carView);
     }
     private void selectFourthCar(){
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("TopDownAMCar4.jpg");
+        ImageView carView = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/TopDownAMCar4.jpg");
         carChooserScreen.getChildren().add(carView);
     }
 
@@ -178,7 +210,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
         carBox.getChildren().add(mainmenuButton);
 
-        ImageView carView = new ImageView("TopDownAMCar.jpg");
+
+        ImageView carView = new ImageView( "file:"+currentdirectory+"/src/main/resources/assets/textures/TopDownAMCar.jpg");
         pane.getChildren().add(carView);
         return pane;
     }
@@ -205,7 +238,10 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
     @Override
     protected Node createBackground(double width, double height) {
+
         return new Rectangle(width, height, Color.DARKGREY);
+
+
     }
 
     @Override

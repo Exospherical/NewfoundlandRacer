@@ -32,13 +32,18 @@ public class NewfoundRacerApp extends GameApplication {
         settings.setTitle("Newfoundland Moose Collision");
         settings.setVersion("0.1");
         settings.setMainMenuEnabled(true);
-        settings.setSceneFactory(new SceneFactory(){
-            @Override
-            public NewfoundlandRacerMainMenu newMainMenu(){
-                return new NewfoundlandRacerMainMenu();
-            }
+
+        settings.setSceneFactory(new SceneFactory() {
+                                     @Override
+                                     public NewfoundlandRacerMainMenu newMainMenu() {
+                                         return new NewfoundlandRacerMainMenu();
+                                     }
                                  }
         );
+
+
+
+
     }
 
     /**

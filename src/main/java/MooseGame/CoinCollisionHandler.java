@@ -19,6 +19,4 @@ public class CoinCollisionHandler extends CollisionHandler {
         inc("score", +100);
         play("coincollect.wav");
     }
-
-
 }
