@@ -164,6 +164,8 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         VBox highScoreBox = new VBox();
         highScoreBox.setPrefSize(800.0,600.0);
         highScoreBox.setAlignment(Pos.CENTER);
+        Button mainmenuButton = new Button("Back");
+        highScoreBox.getChildren().add(mainmenuButton);
 
         return highScoreBox;
     }
