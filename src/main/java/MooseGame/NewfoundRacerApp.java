@@ -5,7 +5,6 @@ import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.SceneFactory;
 import com.almasb.fxgl.core.math.Vec2;
 import com.almasb.fxgl.dsl.FXGL;
-import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
@@ -18,8 +17,6 @@ import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class NewfoundRacerApp extends GameApplication {
     private Entity player;
-    private int heightIncreaser = 50;
-
     /**
      * The settings for the game window.
      * @param settings
@@ -32,18 +29,10 @@ public class NewfoundRacerApp extends GameApplication {
         settings.setTitle("Newfoundland Moose Collision");
         settings.setVersion("0.1");
         settings.setMainMenuEnabled(true);
-
         settings.setSceneFactory(new SceneFactory() {
                                      @Override
-                                     public NewfoundlandRacerMainMenu newMainMenu() {
-                                         return new NewfoundlandRacerMainMenu();
-                                     }
-                                 }
-        );
-
-
-
-
+                                     public NewfoundlandRacerMainMenu newMainMenu(){
+                                         return new NewfoundlandRacerMainMenu();}});
     }
 
     /**
@@ -99,9 +88,7 @@ public class NewfoundRacerApp extends GameApplication {
         getGameTimer().runAtInterval(this::spawnPotHole , Duration.seconds(5));
         getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(12));
         getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(10));
-        //getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
-
-
+        getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
     }
 
     /**
@@ -111,6 +98,7 @@ public class NewfoundRacerApp extends GameApplication {
     @Override
     protected void initGameVars(Map<String, Object> vars){
         vars.put("score", 0);
+        vars.put("selectedCar", 0);
     }
 
     @Override
@@ -130,8 +118,8 @@ public class NewfoundRacerApp extends GameApplication {
     }
 
     /**
-    TODO: maybe make every few seconds alive gives a point too?
-     */
+     * Initializes UI (score).
+     * */
     @Override
     protected void initUI() {
         Text uiScore = new Text("");
@@ -144,7 +132,6 @@ public class NewfoundRacerApp extends GameApplication {
 
     /**
      * This method is used to spawn a driver object on the road, in one of the 4 lanes randomly.
-     * TODO: Add slightly random x-axis variation to make game more interesting
      */
     private void spawnDriver() {
         int lane = FXGL.random(0,3);
@@ -163,11 +150,14 @@ public class NewfoundRacerApp extends GameApplication {
             }
     }
 
+    /**
+     * This method spawns a moose slighly ahead of the player, and runs in the x axis across the road.
+     */
     private void spawnMoose() {
         getGameWorld().spawn("moose", 800, player.getY()-200);
     }
     /**
-     * TODO: Add slight random x-axis variation to make game more interesting
+     * Spawns a coin in a random lane, with same speed as cars.
      */
     private void spawnCoin(){
         int lane = FXGL.random(0,3);
@@ -185,11 +175,13 @@ public class NewfoundRacerApp extends GameApplication {
         }
     }
 
+    /**
+     * Spawns potholes on the road.
+     */
     private void spawnPotHole() {
         int lane = FXGL.random(0, 3);
         if (lane == 0) {
             getGameWorld().spawn("pothole", 100, player.getY() -800);
-           // System.out.println("ur busted");
 
         } else if (lane == 1) {
             getGameWorld().spawn("pothole", 200, player.getY() -800);
@@ -199,13 +191,5 @@ public class NewfoundRacerApp extends GameApplication {
         } else if (lane == 3) {
             getGameWorld().spawn("pothole", -200, player.getY() -800);
         }
-    }
-
-    private int incrementHeight(){
-        heightIncreaser += 800;
-        //System.out.println(player.getX());
-       // System.out.println(player.getY());
-        return heightIncreaser;
-
     }
 }
