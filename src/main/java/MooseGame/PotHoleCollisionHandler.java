@@ -16,7 +16,8 @@ public class PotHoleCollisionHandler extends CollisionHandler {
     @Override
     protected void onCollisionBegin(Entity Player, Entity DRIVER) {
         //DRIVER.removeFromWorld();
-        showMessage("You Hit a Pothole and Died!");
+        FXGL.getDialogService().showBox("You hit a pothole and died.",NewfoundlandRacerMainMenu.CreateGameOverScreen());
+
         // FXGL.getGameController().gotoGameMenu();
     }
 }

@@ -13,7 +13,8 @@ public class MooseCollisionHandler extends CollisionHandler {
     @Override
     protected void onCollisionBegin(Entity Player, Entity MOOSE) {
         MOOSE.removeFromWorld();
-        showMessage("You Hit a Moose and Died! Game over.");
-        FXGL.getGameController().gotoGameMenu();
+        FXGL.getDialogService().showBox("You hit a moose and died.",NewfoundlandRacerMainMenu.CreateGameOverScreen());
+
+
     }
 }

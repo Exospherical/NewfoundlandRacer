@@ -89,6 +89,7 @@ public class NewfoundRacerApp extends GameApplication {
         getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(12));
         getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(10));
         getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
+        //getGameTimer().runAtInterval(this::getGameTime , Duration.seconds(1));
     }
 
     /**
@@ -191,5 +192,10 @@ public class NewfoundRacerApp extends GameApplication {
         } else if (lane == 3) {
             getGameWorld().spawn("pothole", -200, player.getY() -800);
         }
+    }
+
+    private void getGameTime(){
+        System.out.println();
+        FXGL.getDialogService().showBox("ur ded lol",NewfoundlandRacerMainMenu.CreateGameOverScreen());
     }
 }
