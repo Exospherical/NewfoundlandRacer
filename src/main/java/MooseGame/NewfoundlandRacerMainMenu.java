@@ -300,11 +300,9 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         gameEndDialog.setPrefSize(400.0,400.0);
         gameEndDialog.setAlignment(Pos.CENTER);
         int score = FXGL.geti("score");
-
         TextArea t = new TextArea();
         t.setFont(new Font(20));
         t.setText("Your score was: " + score);
-        System.out.println(t);
         Button continueButton = new Button("Try Again");
         Button endButton = new Button("Quit to main menu");
         continueButton.setOnAction((event) -> FXGL.getGameController().startNewGame() );

@@ -85,11 +85,11 @@ public class NewfoundRacerApp extends GameApplication {
         getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
         //this function implements runnable allowing parameters to be passed
         getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(3));
-        getGameTimer().runAtInterval(this::spawnPotHole , Duration.seconds(5));
+        getGameTimer().runAtInterval(this::spawnPotHole , Duration.seconds(7));
         getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(12));
         getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(10));
         getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
-        //getGameTimer().runAtInterval(this::getGameTime , Duration.seconds(1));
+        //spawn("driver",0,0);
     }
 
     /**
@@ -182,20 +182,15 @@ public class NewfoundRacerApp extends GameApplication {
     private void spawnPotHole() {
         int lane = FXGL.random(0, 3);
         if (lane == 0) {
-            getGameWorld().spawn("pothole", 100, player.getY() -800);
+            getGameWorld().spawn("pothole", 595, player.getY() -800);
 
         } else if (lane == 1) {
-            getGameWorld().spawn("pothole", 200, player.getY() -800);
+            getGameWorld().spawn("pothole", 450, player.getY() -800);
 
         } else if (lane == 2) {
-            getGameWorld().spawn("pothole", -100, player.getY() -800);
+            getGameWorld().spawn("pothole", 100, player.getY() -800);
         } else if (lane == 3) {
-            getGameWorld().spawn("pothole", -200, player.getY() -800);
+            getGameWorld().spawn("pothole", -60, player.getY() -800);
         }
-    }
-
-    private void getGameTime(){
-        System.out.println();
-        FXGL.getDialogService().showBox("ur ded lol",NewfoundlandRacerMainMenu.CreateGameOverScreen());
     }
 }
