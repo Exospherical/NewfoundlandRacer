@@ -27,7 +27,7 @@ public class GameObjectCreator implements EntityFactory {
     }
 
     /**
-     * Method that generates AI Driver entities that will drive straight
+     * Method that generates AI Driver entities that will drive straight.
      *
      * @param data
      * @return
@@ -45,8 +45,7 @@ public class GameObjectCreator implements EntityFactory {
     }
 
     /**
-     * Method that generates the player entity in their car onto the map
-     *
+     * Method that generates the player entity in their car onto the map.
      * @param data
      * @return drivers selected car
      */
