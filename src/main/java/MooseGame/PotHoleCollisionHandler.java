@@ -13,7 +13,7 @@ import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 public class PotHoleCollisionHandler extends CollisionHandler {
 
     /**
-     *Method that connects the player and pothole entities to the racer app.
+     * CoinCollisionHandler class that deals with all the events that were to occur if the player has collected a coin.
      */
     public PotHoleCollisionHandler() {
         super(EntityType.Player, EntityType.POTHOLE);
