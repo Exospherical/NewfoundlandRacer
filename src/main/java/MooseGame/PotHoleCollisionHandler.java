@@ -7,15 +7,23 @@ import com.almasb.fxgl.physics.CollisionHandler;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
+/**
+ * MooseCollisionHandler class that deals with all the events that were to occur if the player were to hit a Pothole.
+ */
 public class PotHoleCollisionHandler extends CollisionHandler {
 
     /**
-     *Method that connects the player and coin entities to the racer app.
+     *Method that connects the player and pothole entities to the racer app.
      */
     public PotHoleCollisionHandler() {
         super(EntityType.Player, EntityType.POTHOLE);
     }
 
+    /**
+     *  Method that ends the game and prompts with a dialog box if you were to hit a pothole.
+     * @param Player
+     * @param DRIVER
+     */
     @Override
     protected void onCollisionBegin(Entity Player, Entity DRIVER) {
         //DRIVER.removeFromWorld();
