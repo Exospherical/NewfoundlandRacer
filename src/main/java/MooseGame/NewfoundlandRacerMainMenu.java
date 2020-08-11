@@ -145,6 +145,9 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         Button mainmenuButton = new Button("Back");
         Button carChooserButton = new Button("Choose Car");
         Button highScoreButton = new Button("High Scores");
+        String hoverStyle = "-fx-background-color:#0000ff";
+        String quitStyle = "-fx-background-color:#ff0000";
+        String regularStyle = "-fx-background-color:#ffffff";
         mainmenuButton.setOnAction((event) -> ShowMainMenu());
         carChooserButton.setOnAction((event) -> ShowCarMenu());
         optionsBox.getChildren().add(imageView);
@@ -155,6 +158,11 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         GridPane.setHalignment(highScoreButton, HPos.RIGHT);
         optionsBox.getChildren().add(mainmenuButton);
         GridPane.setHalignment(mainmenuButton, HPos.CENTER);
+
+        mainmenuButton.setOnMouseEntered((event) ->  mainmenuButton.setStyle(quitStyle));
+        mainmenuButton.setOnMouseExited((event) ->  mainmenuButton.setStyle(regularStyle));
+        carChooserButton.setOnMouseEntered((event) ->  carChooserButton.setStyle(hoverStyle));
+        carChooserButton.setOnMouseExited((event) ->  carChooserButton.setStyle(regularStyle));
         return optionsBox;
     }
 
@@ -224,30 +232,48 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         VBox carBox = new VBox();
         carBox.setAlignment(Pos.CENTER);
         carBox.setPrefSize(200.0, 40.0);
+        String hoverStyle = "-fx-background-color:#0000ff";
+        String quitStyle = "-fx-background-color:#ff0000";
+        String regularStyle = "-fx-background-color:#ffffff";
         Button mainmenuButton = new Button("Back");
         mainmenuButton.setOnAction((event) -> {
             ShowMainMenu();
         });
+        mainmenuButton.setOnMouseEntered((event) ->  mainmenuButton.setStyle(quitStyle));
+        mainmenuButton.setOnMouseExited((event) ->  mainmenuButton.setStyle(regularStyle));
         mainmenuButton.setLayoutX(200);
+
         Button firstCarButton = new Button("Car One");
         firstCarButton.setOnAction((event) -> {
             selectFirstCar();
         });
+        firstCarButton.setOnMouseEntered((event) ->  firstCarButton.setStyle(hoverStyle));
+        firstCarButton.setOnMouseExited((event) ->  firstCarButton.setStyle(regularStyle));
+
         carBox.getChildren().add(firstCarButton);
         Button secondCarButton = new Button("Car Two");
         secondCarButton.setOnAction((event) -> {
             selectSecondCar();
         });
+        secondCarButton.setOnMouseEntered((event) ->  secondCarButton.setStyle(hoverStyle));
+        secondCarButton.setOnMouseExited((event) ->  secondCarButton.setStyle(regularStyle));
+
         carBox.getChildren().add(secondCarButton);
         Button thirdCarButton = new Button("Car Three");
         thirdCarButton.setOnAction((event) -> {
             selectThirdCar();
         });
+        thirdCarButton.setOnMouseEntered((event) ->  thirdCarButton.setStyle(hoverStyle));
+        thirdCarButton.setOnMouseExited((event) ->  thirdCarButton.setStyle(regularStyle));
+
         carBox.getChildren().add(thirdCarButton);
         Button fourthCarButton = new Button("Car Four");
         fourthCarButton.setOnAction((event) -> {
             selectFourthCar();
         });
+        fourthCarButton.setOnMouseEntered((event) ->  fourthCarButton.setStyle(hoverStyle));
+        fourthCarButton.setOnMouseExited((event) ->  fourthCarButton.setStyle(regularStyle));
+
         carBox.getChildren().add(fourthCarButton);
         carBox.getChildren().add(mainmenuButton);
         ImageView carView = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/player.png");
@@ -375,12 +401,27 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         VBox gameEndDialog = new VBox();
         gameEndDialog.setPrefSize(400.0, 400.0);
         gameEndDialog.setAlignment(Pos.CENTER);
+        String hoverStyle = "-fx-background-color:#0000ff";
+        String quitStyle = "-fx-background-color:#ff0000";
+        String regularStyle = "-fx-background-color:#ffffff";
         int score = FXGL.geti("score");
+        String MVAFact="More than 70% of Moose-Vehicle accidents are reported \nbetween May and October!";
+        String MVAFact2="Majority of Moose-Vehicle accidents occur between Dusk \nand Dawn!";
+        String MVAFact3="Vehicle Damage alone from Moose-Vehicle accidents cost \nmore than $1 million annually!";
+        String MVAFact4="Moose can reach 7.5 feet in height weigh up to 1,600 \npounds, even the slightest graze will do damage!";
+        String[] MVAFArray = {MVAFact, MVAFact2, MVAFact3, MVAFact4};
+
         TextArea t = new TextArea();
         t.setFont(new Font(20));
-        t.setText("Your score was: " + score);
+        t.setText("Your score was: " + score+"\n\n" + "Fun Fact! \n" + MVAFArray[FXGL.random(0,MVAFArray.length-1)]);
+
+
         Button continueButton = new Button("Try Again");
         Button endButton = new Button("Quit to main menu");
+        endButton.setOnMouseEntered((event) ->  endButton.setStyle(quitStyle));
+        endButton.setOnMouseExited((event) ->  endButton.setStyle(regularStyle));
+        continueButton.setOnMouseEntered((event) ->  continueButton.setStyle(hoverStyle));
+        continueButton.setOnMouseExited((event) ->  continueButton.setStyle(regularStyle));
         continueButton.setOnAction((event) -> FXGL.getGameController().startNewGame());
         gameEndDialog.getChildren().add(t);
         gameEndDialog.getChildren().add(continueButton);
