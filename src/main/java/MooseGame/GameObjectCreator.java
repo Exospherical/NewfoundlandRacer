@@ -67,7 +67,7 @@ public class GameObjectCreator implements EntityFactory {
                     .type(EntityType.Player)
                     //.from(data)
                     .viewWithBBox("driver1.png").rotate(-90)
-                    //.scale(1.5, 1.5)
+                    .scale(1.5, 1.5)
                     .collidable()
                     .with(new PlayerComponent())
                     .build();
@@ -77,7 +77,7 @@ public class GameObjectCreator implements EntityFactory {
                     .type(EntityType.Player)
                     //.from(data)
                     .viewWithBBox("driver2.png").rotate(-90)
-                    //.scale(1.5, 1.5)
+                    .scale(1.5, 1.5)
                     .collidable()
                     .with(new PlayerComponent())
                     .build();
@@ -86,7 +86,7 @@ public class GameObjectCreator implements EntityFactory {
                     .type(EntityType.Player)
                     //.from(data)
                     .viewWithBBox("driver3.png").rotate(-90)
-                    //.scale(1.5, 1.5)
+                    .scale(1.5, 1.5)
                     .collidable()
                     .with(new PlayerComponent())
                     .build();

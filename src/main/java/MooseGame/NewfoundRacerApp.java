@@ -20,14 +20,14 @@ public class NewfoundRacerApp extends GameApplication {
     /**
      * The settings for the game window.
      * @param settings
-     * the game window settings
+     * the game window settings. Resolution, default menu settings.
      */
     @Override
     protected void initSettings(GameSettings settings) {
         settings.setWidth(840);
         settings.setHeight(650);
         settings.setTitle("Newfoundland Moose Collision");
-        settings.setVersion("0.1");
+        settings.setVersion("1.0");
         settings.setMainMenuEnabled(true);
         settings.setSceneFactory(new SceneFactory() {
                                      @Override
@@ -37,6 +37,7 @@ public class NewfoundRacerApp extends GameApplication {
 
     /**
      * This method sets up the controls that the player uses to move.
+     * WASD - Accelerate forward, turn left, reverse, turn right, respectively.
      */
     @Override
     protected void initInput() {
@@ -74,7 +75,7 @@ public class NewfoundRacerApp extends GameApplication {
     }
 
     /**
-     * This method sets up the gameplay loop by spawning the players, other cars and obstacles.
+     * This method sets up the gameplay loop by spawning the player, other cars, moose and obstacles.
      */
     @Override
     protected void initGame() {
@@ -95,6 +96,8 @@ public class NewfoundRacerApp extends GameApplication {
     /**
      * Contains game variables, like score.
      * @param vars
+     * A listing of initial variables that the game uses in a key:value pair. Stores the players score and selected car
+     * model.
      */
     @Override
     protected void initGameVars(Map<String, Object> vars){
@@ -102,6 +105,9 @@ public class NewfoundRacerApp extends GameApplication {
         vars.put("selectedCar", 0);
     }
 
+    /**
+     * Sets up the games collision handlers between entity types, and attaches it to the physics engine.
+     */
     @Override
     protected void initPhysics(){
         var coinCollisionHandler = new CoinCollisionHandler();
@@ -114,12 +120,17 @@ public class NewfoundRacerApp extends GameApplication {
         getPhysicsWorld().addCollisionHandler(potHoleCollisionHandler);
     }
 
+    /**
+     * The entry point for the game.
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }
 
     /**
-     * Initializes UI (score).
+     * Initializes UI (score). Sets the texts color to black and increases font, sets to top right of players HUD.
+     * Attaches a UI element to the players display.
      * */
     @Override
     protected void initUI() {
@@ -152,13 +163,13 @@ public class NewfoundRacerApp extends GameApplication {
     }
 
     /**
-     * This method spawns a moose slighly ahead of the player, and runs in the x axis across the road.
+     * This method spawns a moose slighly ahead of the player, and it runs in the x axis across the road.
      */
     private void spawnMoose() {
         getGameWorld().spawn("moose", 800, player.getY()-200);
     }
     /**
-     * Spawns a coin in a random lane, with same speed as cars.
+     * Spawns a coin in a random lane, with same speed as cars, that moves in the same lane.
      */
     private void spawnCoin(){
         int lane = FXGL.random(0,3);
@@ -177,7 +188,7 @@ public class NewfoundRacerApp extends GameApplication {
     }
 
     /**
-     * Spawns potholes on the road.
+     * Spawns stationary potholes on the road, where the cars drive.
      */
     private void spawnPotHole() {
         int lane = FXGL.random(0, 3);
