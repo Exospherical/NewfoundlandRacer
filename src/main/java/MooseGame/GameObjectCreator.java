@@ -13,7 +13,7 @@ import javafx.util.Duration;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 /**
- * This class handles all entity spawning.
+ * This class handles all entity spawning for the Racer App.
  */
 public class GameObjectCreator implements EntityFactory {
     @Spawns("background")
@@ -27,8 +27,7 @@ public class GameObjectCreator implements EntityFactory {
     }
 
     /**
-     * Other drivers spawn in in a lane, and continue going straight.
-     * TODO: ADD COLLISION
+     * Method that generates AI Driver entities that will drive straight
      *
      * @param data
      * @return
@@ -46,10 +45,10 @@ public class GameObjectCreator implements EntityFactory {
     }
 
     /**
-     * Spawns the player entity.
+     * Method that generates the player entity in their car onto the map
      *
      * @param data
-     * @return
+     * @return drivers selected car
      */
     @Spawns("player")
     public Entity newPlayer(SpawnData data) {
@@ -94,9 +93,9 @@ public class GameObjectCreator implements EntityFactory {
     }
 
     /**
-     * Spawns an animated coin sprite that moves the same speed as other drivers in the -y axis.
+     * Generates a coin sprite that also moves forward and can be collected by the driver to increase score.
      * @param data
-     * @return
+     * @return coin
      */
     @Spawns("coin")
     public Entity coin(SpawnData data){
@@ -112,9 +111,8 @@ public class GameObjectCreator implements EntityFactory {
     }
 
     /**
-     * Spawns moose that runs from right to left across the road. animated sprite.
-     * @param data
-     * @return
+     * Generates a moose that runs across the road as an obstacle for the driver, will end game if hit.
+     * @return Moose obstacle
      */
     @Spawns("moose")
     public Entity moose(SpawnData data){
@@ -130,9 +128,9 @@ public class GameObjectCreator implements EntityFactory {
     }
 
     /**
-     * spawns a stationary pothole in the lane that car drive down.
+     * Generates a stationary pothole in a lane as an obstacle for the driver, will end game if hit.
      * @param data
-     * @return
+     * @return Pothole obstacle
      */
     @Spawns("pothole")
     public Entity pothole(SpawnData data){
