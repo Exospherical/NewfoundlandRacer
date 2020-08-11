@@ -13,7 +13,7 @@ import javafx.util.Duration;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 /**
- * This class handles all entity spawning for the Racer App.
+ * This class handles all generation of entities for the Racer App.
  */
 public class GameObjectCreator implements EntityFactory {
     @Spawns("background")
