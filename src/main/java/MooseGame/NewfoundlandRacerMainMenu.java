@@ -57,7 +57,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void ShowMainMenu() {
         getContentRoot().getChildren().remove(0);
-        ImageView bg = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/mainmenu.png");
+        ImageView bg = new ImageView("/assets/textures/mainmenu.png");
         bg.setFitHeight(840);
         getContentRoot().getChildren().add(0, bg);
         getMenuContentRoot().getChildren().clear();
@@ -79,7 +79,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void ShowCarMenu() {
         getContentRoot().getChildren().remove(0);
-        ImageView bg = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/garagebackground.png");
+        ImageView bg = new ImageView("/assets/textures/garagebackground.png");
         getContentRoot().getChildren().add(0, bg);
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(carChooserScreen);
@@ -90,7 +90,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void ShowScoreMenu() {
         getContentRoot().getChildren().remove(0);
-        ImageView bg = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/opt.jpg");
+        ImageView bg = new ImageView("/assets/textures/opt.jpg");
         getContentRoot().getChildren().add(0, bg);
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(highScoreScreen);
@@ -145,7 +145,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private Node CreateOptionsScreen() {
         GridPane optionsBox = new GridPane();
-        String backgroundImageURL = "file:" + currentDirectory + "/src/main/resources/assets/textures/optionsmenu.jpg";
+        String backgroundImageURL = "/assets/textures/optionsmenu.jpg";
         Image image = new Image(backgroundImageURL);
         ImageView imageView = new ImageView(image);
         optionsBox.setAlignment(Pos.CENTER);
@@ -179,7 +179,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void selectFirstCar() {
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/player.png");
+        ImageView carView = new ImageView("/assets/textures/player.png");
         carView.setFitHeight(201);
         carView.setFitWidth(251);
         carView.setPreserveRatio(true);
@@ -192,7 +192,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void selectSecondCar() {
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/driver1.png");
+        ImageView carView = new ImageView("/assets/textures/driver1.png");
         carView.setFitHeight(201);
         carView.setFitWidth(251);
         carView.setPreserveRatio(true);
@@ -205,7 +205,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void selectThirdCar() {
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/driver2.png");
+        ImageView carView = new ImageView("/assets/textures/driver2.png");
         carView.setFitHeight(201);
         carView.setFitWidth(251);
         carView.setPreserveRatio(true);
@@ -219,7 +219,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
      */
     private void selectFourthCar() {
         carChooserScreen.getChildren().remove(1);
-        ImageView carView = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/driver3.png");
+        ImageView carView = new ImageView("/assets/textures/driver3.png");
         carView.setFitHeight(201);
         carView.setFitWidth(251);
         carView.setPreserveRatio(true);
@@ -283,7 +283,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
         carBox.getChildren().add(fourthCarButton);
         carBox.getChildren().add(mainmenuButton);
-        ImageView carView = new ImageView("file:" + currentDirectory + "/src/main/resources/assets/textures/player.png");
+        ImageView carView = new ImageView("/assets/textures/player.png");
         carView.setFitHeight(201);
         carView.setFitWidth(251);
         pane.getChildren().add(carBox);
@@ -442,6 +442,9 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         return gameEndDialog;
     }
 
+    /**
+     * A method that toggles music between the menus and the game.
+     */
     public static void toggleMusic(){
         String menuSong = "Caffeine-Crazed-Coin-Op-Kids.mp3";
         String gameMusic = "8-Bit-Perplexion.mp3";
