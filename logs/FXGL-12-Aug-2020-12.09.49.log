@@ -1,0 +1,317 @@
+12:09:18.735 [main                     ] DEBUG GameApplication      - Logger initialized
+12:09:18.739 [main                     ] DEBUG GameApplication      - Logging settings
+Title: Newfoundland Moose Collision
+Version: 1.0
+Width: 840
+Height: 650
+Fullscreen: false
+Intro: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class MooseGame.NewfoundRacerApp$1
+
+12:09:19.040 [JavaFX Application Thread] DEBUG GameApplication      - Initializing FXGL
+12:09:19.053 [JavaFX Application Thread] INFO  Engine               - FXGL-11.9 (27.05.2020 17.06) on WINDOWS (J:14.0.1 FX:13.0.2)
+12:09:19.054 [JavaFX Application Thread] DEBUG Engine               - JRE Vendor Name: Oracle Corporation
+12:09:19.054 [JavaFX Application Thread] DEBUG Engine               - Running on OS: Windows 10 version 10.0
+12:09:19.054 [JavaFX Application Thread] DEBUG Engine               - Architecture: amd64
+12:09:19.054 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+12:09:19.055 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+12:09:19.141 [JavaFX Application Thread] DEBUG MainWindow           - Creating a JavaFX scene
+12:09:19.176 [JavaFX Application Thread] DEBUG MainWindow           - Target settings size: 840.0 x 650.0
+12:09:19.176 [JavaFX Application Thread] DEBUG MainWindow           - Scaled scene size:    840.0 x 650.0
+12:09:19.176 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+12:09:19.178 [JavaFX Application Thread] DEBUG MainWindow           - Set initial scene to FXGLStartupScene
+12:09:19.183 [JavaFX Application Thread] DEBUG MainWindow           - Opening main window
+12:09:19.267 [JavaFX Application Thread] DEBUG MainWindow           - Window border size: (16.0, 39.0)
+12:09:19.267 [JavaFX Application Thread] DEBUG MainWindow           - Scaled size: 840.0 x 650.0
+12:09:19.267 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+12:09:19.267 [JavaFX Application Thread] DEBUG MainWindow           - Scene size: 840.0 x 650.0
+12:09:19.268 [JavaFX Application Thread] DEBUG MainWindow           - Stage size: 856.0 x 689.0
+12:09:19.275 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing environment variables
+12:09:19.293 [FXGL Background Thread 1 ] DEBUG WindowService        - Applying CSS: fxgl_dark.css
+12:09:19.294 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/css/fxgl_dark.css
+12:09:19.330 [FXGL Background Thread 1 ] DEBUG WindowService        - Initializing application scenes
+12:09:19.352 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+12:09:19.383 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=650, physics.ppm=50.0
+12:09:19.385 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 840x650
+12:09:19.397 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/music/8-Bit-Perplexion.mp3
+12:09:19.524 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:19.530 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:19.530 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@77fdb32
+12:09:19.620 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/particles/trace_horizontal.png
+12:09:19.645 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyGameMenu()
+12:09:19.653 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+12:09:19.657 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/particles/smoke.png
+12:09:19.694 [FXGL Background Thread 1 ] DEBUG WindowService        - Application scenes initialized
+12:09:19.701 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Loading FXGL system data
+12:09:19.704 [FXGL Background Thread 1 ] DEBUG FileSystemAccess     - Reading from: E:\secondYear\Java\NewfoundlandRacer\system\fxgl.bundle
+12:09:19.708 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Bundle FXGL: {}
+12:09:19.708 [FXGL Background Thread 1 ] INFO  Engine               - FXGL initialization took: 0.431 sec
+12:09:19.709 [FXGL Background Thread 1 ] DEBUG GameApplication      - Loading localizations
+12:09:19.709 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/english.lang
+12:09:19.717 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/french.lang
+12:09:19.718 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/german.lang
+12:09:19.719 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/hungarian.lang
+12:09:19.721 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/russian.lang
+12:09:19.722 [FXGL Background Thread 1 ] DEBUG GameApplication      - Registering font factories with UI factory
+12:09:19.722 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/VarelaRound-Regular.ttf
+12:09:19.753 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/Abel-Regular.ttf
+12:09:19.755 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/lucida_console.ttf
+12:09:19.758 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/Courier-Prime.ttf
+12:09:19.766 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Right - D
+12:09:19.766 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Left - A
+12:09:19.766 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Up - W
+12:09:19.766 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Down - S
+12:09:19.766 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/fxgl_icon.png
+12:09:19.780 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/cursors/fxgl_default.png
+12:09:19.781 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - P
+12:09:19.782 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+12:09:19.782 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+12:09:19.782 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+12:09:19.802 [JavaFX Application Thread] DEBUG FXGLStartupScene     - STARTUP
+12:09:19.803 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:19.808 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from FXGLStartupScene and adding to 
+12:09:19.809 [JavaFX Application Thread] DEBUG MainWindow           - FXGLStartupScene -> 
+12:09:19.809 [JavaFX Application Thread] DEBUG MainWindow           - Push state: NewfoundlandRacerMainMenu
+12:09:19.809 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:19.815 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from  and adding to NewfoundlandRacerMainMenu
+12:09:19.816 [JavaFX Application Thread] DEBUG MainWindow           -  -> NewfoundlandRacerMainMenu
+12:09:20.511 [JavaFX Application Thread] DEBUG Menu                 - fireNewGame()
+12:09:20.511 [JavaFX Application Thread] DEBUG WindowService        - Starting new game
+12:09:20.511 [JavaFX Application Thread] DEBUG MainWindow           - Pop state: NewfoundlandRacerMainMenu
+12:09:20.511 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:20.511 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from NewfoundlandRacerMainMenu and adding to 
+12:09:20.512 [JavaFX Application Thread] DEBUG MainWindow           -  <- NewfoundlandRacerMainMenu
+12:09:20.512 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:20.517 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from  and adding to FXGLLoadingScene
+12:09:20.517 [JavaFX Application Thread] DEBUG MainWindow           -  -> FXGLLoadingScene
+12:09:20.517 [JavaFX Application Thread] DEBUG WindowService        - Clearing previous game
+12:09:20.517 [JavaFX Application Thread] DEBUG GameScene            - Clearing game scene
+12:09:20.517 [JavaFX Application Thread] DEBUG GameWorld            - Clearing game world
+12:09:20.518 [JavaFX Application Thread] DEBUG PhysicsWorld         - Clearing physics world
+12:09:20.519 [FXGL Background Thread 1 ] DEBUG GameApplication      - Initializing game
+12:09:20.525 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/4lanehighway.png
+12:09:20.582 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/player.png
+12:09:20.590 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/music/8-Bit-Perplexion.mp3
+12:09:20.590 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:20.590 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@77fdb32
+12:09:20.626 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:20.628 [FXGL Background Thread 1 ] INFO  GameApplication      - Game initialization took: 0.109 sec
+12:09:20.630 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:20.635 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from FXGLLoadingScene and adding to GameScene
+12:09:20.635 [JavaFX Application Thread] DEBUG MainWindow           - FXGLLoadingScene -> GameScene
+12:09:22.035 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/driver3.png
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - Logging environment variables
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - achievements: []
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - appIcon: fxgl_icon.png
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - applicationMode: DEVELOPER
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - cSSList: [fxgl_dark.css]
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - configClass: Optional.empty
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - credits: []
+12:09:22.710 [FXGL Background Thread 2 ] DEBUG Engine               - devBBoxColorProperty: ObjectProperty [value: 0xff0000ff]
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - devSensorColorProperty: ObjectProperty [value: 0xffff00ff]
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - devShowBBoxProperty: BooleanProperty [value: false]
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - devShowPositionProperty: BooleanProperty [value: false]
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - enabledMenuItems: []
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - engineServices: [class com.almasb.fxgl.app.GameApplication$GameApplicationService, class com.almasb.fxgl.app.services.WindowService, class com.almasb.fxgl.app.services.FXGLDialogService, class com.almasb.fxgl.app.services.IOTaskExecutorService, class com.almasb.fxgl.event.EventBusService, class com.almasb.fxgl.io.FileSystemService, class com.almasb.fxgl.localization.LocalizationService, class com.almasb.fxgl.app.services.AssetLoaderService, class com.almasb.fxgl.app.services.SystemBundleService, class com.almasb.fxgl.profile.SaveLoadService, class com.almasb.fxgl.ui.FXGLUIFactoryServiceProvider, class com.almasb.fxgl.ui.FXGLDialogFactoryServiceProvider, class com.almasb.fxgl.audio.AudioPlayer, class com.almasb.fxgl.notification.impl.NotificationServiceProvider, class com.almasb.fxgl.achievement.AchievementService, class com.almasb.fxgl.cutscene.CutsceneService, class com.almasb.fxgl.minigames.MiniGameService, class com.almasb.fxgl.net.NetService, class com.almasb.fxgl.app.services.UpdaterService, class com.almasb.fxgl.dev.DevService]
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - fontGame: Abel-Regular.ttf
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - fontMono: lucida_console.ttf
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - fontText: Courier-Prime.ttf
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - fontUI: VarelaRound-Regular.ttf
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - fullScreen: BooleanProperty [value: false]
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - gameDifficulty: MEDIUM
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - gameDifficultyProperty: ObjectProperty [value: MEDIUM]
+12:09:22.711 [FXGL Background Thread 2 ] DEBUG Engine               - globalMusicVolume: 0.5
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - globalMusicVolumeProperty: DoubleProperty [value: 0.5]
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - globalSoundVolume: 0.5
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - globalSoundVolumeProperty: DoubleProperty [value: 0.5]
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - height: 650
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isAndroid: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isBrowser: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isClickFeedbackEnabled: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isCloseConfirmation: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isDesktop: true
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isDeveloperMenuEnabled: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isExperimentalNative: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isExperimentalTiledLargeMap: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isFullScreenAllowed: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isFullScreenFromStart: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isGameMenuEnabled: true
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isIOS: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isIntroEnabled: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isLinux: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isMac: false
+12:09:22.712 [FXGL Background Thread 2 ] DEBUG Engine               - isMainMenuEnabled: true
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - isManualResizeEnabled: false
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - isMobile: false
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - isPreserveResizeRatio: false
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - isProfilingEnabled: false
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - isSingleStep: false
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - isUserProfileEnabled: false
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - isWindows: true
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - language: ObjectProperty [value: ENGLISH]
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - mainWindow: com.almasb.fxgl.app.MainWindow@73f188a0
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - menuKey: ESCAPE
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - notificationViewClass: class com.almasb.fxgl.notification.view.XboxNotificationView
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - pixelsPerMeter: 50.0
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - platform: WINDOWS
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - profileDir: profiles/
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - profileName: StringProperty [value: DEFAULT]
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - randomSeed: -1
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - runtimeInfo: RuntimeInfo(platform=WINDOWS, version=11.9, build=27.05.2020 17.06)
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - saveFileExt: sav
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - sceneFactory: MooseGame.NewfoundRacerApp$1@36f308ba
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - secondsIn24h: 60
+12:09:22.713 [FXGL Background Thread 2 ] DEBUG Engine               - settings: Title: Newfoundland Moose Collision
+Version: 1.0
+Width: 840
+Height: 650
+Fullscreen: false
+Intro: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class MooseGame.NewfoundRacerApp$1
+
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - soundMenuBack: menu/back.wav
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - soundMenuPress: menu/press.wav
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - soundMenuSelect: menu/select.wav
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - soundNotification: core/notification.wav
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - stageStyle: DECORATED
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - supportedLanguages: [ENGLISH, FRENCH, GERMAN, HUNGARIAN, RUSSIAN]
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - title: Newfoundland Moose Collision
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - urlGithub: https://github.com/AlmasB/FXGL
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - urlLeaderboard: http://fxgl-top.herokuapp.com/
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - urlPOM: https://raw.githubusercontent.com/AlmasB/FXGL/master/pom.xml
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - version: 1.0
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - versionCheckDays: 7
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - width: 840
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - Logging services
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.app.GameApplication$GameApplicationService
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.app.services.WindowService
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.app.services.FXGLDialogService
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.app.services.IOTaskExecutorService
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.event.EventBusService
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.io.FileSystemService
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.localization.LocalizationService
+12:09:22.714 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.app.services.AssetLoaderService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.app.services.SystemBundleService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.profile.SaveLoadService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.ui.FXGLUIFactoryServiceProvider
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.ui.FXGLDialogFactoryServiceProvider
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.audio.AudioPlayer
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.notification.impl.NotificationServiceProvider
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.achievement.AchievementService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.cutscene.CutsceneService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.minigames.MiniGameService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.net.NetService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.app.services.UpdaterService
+12:09:22.715 [FXGL Background Thread 2 ] DEBUG Engine               - class com.almasb.fxgl.dev.DevService
+12:09:23.362 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/driver4.png
+12:09:23.640 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/8-Bit-Perplexion.mp3
+12:09:23.640 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:23.640 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:23.676 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@77fdb32
+12:09:23.677 [JavaFX Application Thread] DEBUG MainWindow           - Push state: DialogSubScene
+12:09:23.677 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:23.682 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from GameScene and adding to DialogSubScene
+12:09:23.682 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> DialogSubScene
+12:09:23.683 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/sounds/carcrash.wav
+12:09:27.633 [JavaFX Application Thread] DEBUG WindowService        - Starting new game
+12:09:27.633 [JavaFX Application Thread] DEBUG MainWindow           - Pop state: DialogSubScene
+12:09:27.633 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:27.634 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from DialogSubScene and adding to GameScene
+12:09:27.634 [JavaFX Application Thread] DEBUG MainWindow           - GameScene <- DialogSubScene
+12:09:27.634 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:27.638 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from GameScene and adding to FXGLLoadingScene
+12:09:27.638 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> FXGLLoadingScene
+12:09:27.638 [JavaFX Application Thread] DEBUG WindowService        - Clearing previous game
+12:09:27.638 [JavaFX Application Thread] DEBUG GameScene            - Clearing game scene
+12:09:27.638 [JavaFX Application Thread] DEBUG GameWorld            - Clearing game world
+12:09:27.640 [JavaFX Application Thread] DEBUG PhysicsWorld         - Clearing physics world
+12:09:27.640 [FXGL Background Thread 1 ] DEBUG GameApplication      - Initializing game
+12:09:27.641 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/4lanehighway.png@840.0x750.0
+12:09:27.641 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/player.png
+12:09:27.642 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/music/8-Bit-Perplexion.mp3
+12:09:27.642 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:27.642 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@77fdb32
+12:09:27.642 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:27.643 [FXGL Background Thread 1 ] INFO  GameApplication      - Game initialization took: 0.002 sec
+12:09:27.644 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:27.648 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from FXGLLoadingScene and adding to GameScene
+12:09:27.648 [JavaFX Application Thread] DEBUG MainWindow           - FXGLLoadingScene -> GameScene
+12:09:29.041 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/driver4.png
+12:09:30.403 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/driver2.png
+12:09:30.846 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/pothole.png
+12:09:31.707 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/driver4.png
+12:09:32.044 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/8-Bit-Perplexion.mp3
+12:09:32.044 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:32.044 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:32.088 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@77fdb32
+12:09:32.089 [JavaFX Application Thread] DEBUG MainWindow           - Push state: DialogSubScene
+12:09:32.089 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:32.093 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from GameScene and adding to DialogSubScene
+12:09:32.093 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> DialogSubScene
+12:09:32.093 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/sounds/carcrash.wav
+12:09:33.683 [JavaFX Application Thread] DEBUG WindowService        - Starting new game
+12:09:33.683 [JavaFX Application Thread] DEBUG MainWindow           - Pop state: DialogSubScene
+12:09:33.684 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:33.684 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from DialogSubScene and adding to GameScene
+12:09:33.684 [JavaFX Application Thread] DEBUG MainWindow           - GameScene <- DialogSubScene
+12:09:33.684 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:33.687 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from GameScene and adding to FXGLLoadingScene
+12:09:33.688 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> FXGLLoadingScene
+12:09:33.688 [JavaFX Application Thread] DEBUG WindowService        - Clearing previous game
+12:09:33.688 [JavaFX Application Thread] DEBUG GameScene            - Clearing game scene
+12:09:33.688 [JavaFX Application Thread] DEBUG GameWorld            - Clearing game world
+12:09:33.688 [JavaFX Application Thread] DEBUG PhysicsWorld         - Clearing physics world
+12:09:33.689 [FXGL Background Thread 1 ] DEBUG GameApplication      - Initializing game
+12:09:33.689 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/4lanehighway.png@840.0x750.0
+12:09:33.689 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/player.png
+12:09:33.690 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/music/8-Bit-Perplexion.mp3
+12:09:33.690 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from cache: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:33.690 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@77fdb32
+12:09:33.725 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:33.726 [FXGL Background Thread 1 ] INFO  GameApplication      - Game initialization took: 0.037 sec
+12:09:33.726 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:33.731 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from FXGLLoadingScene and adding to GameScene
+12:09:33.731 [JavaFX Application Thread] DEBUG MainWindow           - FXGLLoadingScene -> GameScene
+12:09:35.075 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/driver3.png
+12:09:36.434 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/driver1.png
+12:09:36.883 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/textures/pothole.png
+12:09:37.291 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/8-Bit-Perplexion.mp3
+12:09:37.291 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:37.291 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:37.292 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@77fdb32
+12:09:37.293 [JavaFX Application Thread] DEBUG MainWindow           - Push state: DialogSubScene
+12:09:37.293 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:37.294 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from GameScene and adding to DialogSubScene
+12:09:37.294 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> DialogSubScene
+12:09:37.294 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/sounds/carcrash.wav
+12:09:46.577 [JavaFX Application Thread] DEBUG MainWindow           - Pop state: DialogSubScene
+12:09:46.577 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:46.578 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from DialogSubScene and adding to GameScene
+12:09:46.578 [JavaFX Application Thread] DEBUG MainWindow           - GameScene <- DialogSubScene
+12:09:46.578 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:46.580 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from GameScene and adding to 
+12:09:46.580 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> 
+12:09:46.581 [JavaFX Application Thread] DEBUG MainWindow           - Push state: NewfoundlandRacerMainMenu
+12:09:46.581 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+12:09:46.581 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from  and adding to NewfoundlandRacerMainMenu
+12:09:46.581 [JavaFX Application Thread] DEBUG MainWindow           -  -> NewfoundlandRacerMainMenu
+12:09:46.581 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/8-Bit-Perplexion.mp3
+12:09:46.581 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from cache: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+12:09:46.581 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@77fdb32
+12:09:46.583 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@2f6115f8
+12:09:49.121 [JavaFX Application Thread] DEBUG GameApplication      - Exiting FXGL
+12:09:49.121 [JavaFX Application Thread] DEBUG LoopRunner           - Stopping loop
+12:09:49.121 [JavaFX Application Thread] DEBUG SystemBundleService  - Saving FXGL system data
+12:09:49.122 [JavaFX Application Thread] DEBUG FileSystemAccess     - Writing to: E:\secondYear\Java\NewfoundlandRacer\system\fxgl.bundle
+12:09:49.123 [JavaFX Application Thread] DEBUG GameApplication      - Shutting down background threads
+12:09:49.123 [JavaFX Application Thread] DEBUG GameApplication      - Closing logger and exiting JavaFX

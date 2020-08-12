@@ -420,6 +420,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         TextArea t = new TextArea();
         t.setFont(new Font(20));
         t.setText("Your score was: " + score+"\n\n" + "Fun Fact! \n" + MVAFArray[FXGL.random(0,MVAFArray.length-1)]);
+        t.setEditable(false);
         Button continueButton = new Button("Try Again");
         Button endButton = new Button("Quit to main menu");
         endButton.setOnMouseEntered((event) ->  endButton.setStyle(quitStyle));
