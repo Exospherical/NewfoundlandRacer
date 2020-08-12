@@ -3,6 +3,7 @@ package MooseGame;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.SceneFactory;
+import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.core.math.Vec2;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
@@ -13,10 +14,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import java.util.Map;
+
+import static MooseGame.NewfoundlandRacerMainMenu.toggleMusic;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
 
 public class NewfoundRacerApp extends GameApplication {
     private Entity player;
+    private boolean loopBGM = true;
+
     /**
      * The settings for the game window.
      * @param settings
@@ -82,7 +87,7 @@ public class NewfoundRacerApp extends GameApplication {
         FXGL.getGameWorld().addEntityFactory(new GameObjectCreator());
         spawn("background", 0, 0);
         player = spawn("player", 300, 300);
-        getGameScene().getViewport().bindToEntity(player, getAppWidth()/2, getAppHeight()/2);
+        getGameScene().getViewport().bindToEntity(player, getAppWidth()/2.0, getAppHeight()/2.0);
         getGameScene().getViewport().setBounds(0,-Integer.MAX_VALUE,getAppWidth(), Integer.MAX_VALUE);
         //this function implements runnable allowing parameters to be passed
         getGameTimer().runAtInterval(() -> spawnDriver() , Duration.seconds(3));
@@ -90,7 +95,7 @@ public class NewfoundRacerApp extends GameApplication {
         getGameTimer().runAtInterval(this::spawnCoin , Duration.seconds(12));
         getGameTimer().runAtInterval(this::spawnMoose , Duration.seconds(10));
         getGameTimer().runAtInterval(() ->inc("score", +10), Duration.seconds(3));
-        //spawn("driver",0,0);
+        toggleMusic();
     }
 
     /**
@@ -163,7 +168,7 @@ public class NewfoundRacerApp extends GameApplication {
     }
 
     /**
-     * This method spawns a moose slighly ahead of the player, and it runs in the x axis across the road.
+     * This method spawns a moose slightly ahead of the player, and it runs in the x axis across the road.
      */
     private void spawnMoose() {
         getGameWorld().spawn("moose", 800, player.getY()-200);

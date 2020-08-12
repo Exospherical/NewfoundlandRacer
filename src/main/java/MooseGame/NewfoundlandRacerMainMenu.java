@@ -2,8 +2,12 @@ package MooseGame;
 
 import com.almasb.fxgl.app.scene.FXGLMenu;
 import com.almasb.fxgl.app.scene.MenuType;
+import com.almasb.fxgl.audio.Audio;
+import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
 import javafx.beans.binding.StringBinding;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -27,6 +31,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
     private Node optionsScreen;
     private final String currentDirectory = System.getProperty("user.dir");
     private static int selectedCar;
+    private static int musicPlaying = 0;
 
 
     /**
@@ -42,6 +47,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         mainScreen.setTranslateY(getAppHeight() / 2 - 40 / 2);
         getMenuContentRoot().getChildren().addAll(mainScreen);
         ShowMainMenu();
+
         //mainScreen.getParent().setTranslateY(200);
         // mainScreen.getParent().setTranslateX(350);
     }
@@ -56,6 +62,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         getContentRoot().getChildren().add(0, bg);
         getMenuContentRoot().getChildren().clear();
         getMenuContentRoot().getChildren().addAll(mainScreen);
+
     }
 
     /**
@@ -127,6 +134,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         gameOptionsButton.setOnAction((event) -> ShowOptionsMenu());
         exitGameButton.setOnMouseEntered((event) -> exitGameButton.setStyle(quitStyle));
         exitGameButton.setOnMouseExited((event) -> exitGameButton.setStyle(regularStyle));
+        toggleMusic();
         return mainBox;
     }
 
@@ -222,8 +230,7 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
 
     /**
      * Method to generate the overall car selection menu. Container for whole screen is a stackpane, with a vBox nested inside of it for buttons.
-     *
-     * @return pane
+     * @return StackPane
      */
     private StackPane CreateCarScreen() {
         StackPane pane = new StackPane();
@@ -410,12 +417,9 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         String MVAFact3="Vehicle Damage alone from Moose-Vehicle accidents cost \nmore than $1 million annually!";
         String MVAFact4="Moose can reach 7.5 feet in height weigh up to 1,600 \npounds, even the slightest graze will do damage!";
         String[] MVAFArray = {MVAFact, MVAFact2, MVAFact3, MVAFact4};
-
         TextArea t = new TextArea();
         t.setFont(new Font(20));
         t.setText("Your score was: " + score+"\n\n" + "Fun Fact! \n" + MVAFArray[FXGL.random(0,MVAFArray.length-1)]);
-
-
         Button continueButton = new Button("Try Again");
         Button endButton = new Button("Quit to main menu");
         endButton.setOnMouseEntered((event) ->  endButton.setStyle(quitStyle));
@@ -425,10 +429,33 @@ public class NewfoundlandRacerMainMenu extends FXGLMenu {
         continueButton.setOnAction((event) -> FXGL.getGameController().startNewGame());
         gameEndDialog.getChildren().add(t);
         gameEndDialog.getChildren().add(continueButton);
-        endButton.setOnAction((event) -> FXGL.getGameController().gotoMainMenu());
+        //added in event handler in order to change music if player clicks exit to main menu button
+        endButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                FXGL.getGameController().gotoMainMenu();
+                toggleMusic();
+            }
+        });
         gameEndDialog.getChildren().add(endButton);
+        toggleMusic();
         return gameEndDialog;
     }
 
-
+    public static void toggleMusic(){
+        String menuSong = "Caffeine-Crazed-Coin-Op-Kids.mp3";
+        String gameMusic = "8-Bit-Perplexion.mp3";
+        Music gameLoopMusic = FXGL.getAssetLoader().loadMusic(gameMusic);
+        Music menuMusic = FXGL.getAssetLoader().loadMusic(menuSong);
+        if (musicPlaying == 0) {
+            FXGL.getAudioPlayer().stopMusic(gameLoopMusic);
+            FXGL.getAudioPlayer().loopMusic(menuMusic);
+            musicPlaying = 1;
+        }
+        else if (musicPlaying == 1){
+            FXGL.getAudioPlayer().stopMusic(menuMusic);
+            FXGL.getAudioPlayer().loopMusic(gameLoopMusic);
+            musicPlaying = 0;
+        }
+    }
 }

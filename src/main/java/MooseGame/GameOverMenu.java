@@ -1,7 +1,5 @@
 package MooseGame;
 
-
-
 import com.almasb.fxgl.app.scene.FXGLMenu;
 import com.almasb.fxgl.app.scene.MenuType;
 import com.almasb.fxgl.dsl.FXGL;
@@ -20,7 +18,7 @@ public class GameOverMenu extends FXGLMenu {
     public GameOverMenu() {
         super(MenuType.GAME_MENU);
         var exitGameButton = new ExitGameButton("Exit",this::fireExitToMainMenu);
-        exitGameButton.setTranslateX(getAppWidth()/2 - 200/2);
+        exitGameButton.setTranslateX(getAppWidth()/2.0 - 200/2);
         exitGameButton.setTranslateY(getAppHeight()/2-40/2);
         getMenuContentRoot().getChildren().add(exitGameButton);
     }

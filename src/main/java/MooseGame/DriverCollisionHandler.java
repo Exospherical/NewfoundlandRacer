@@ -15,6 +15,8 @@ public class DriverCollisionHandler extends CollisionHandler {
     protected void onCollisionBegin(Entity Player, Entity DRIVER) {
         //DRIVER.removeFromWorld();
         FXGL.getDialogService().showBox("You hit a driver and died.",NewfoundlandRacerMainMenu.CreateGameOverScreen());
+        play("carcrash.wav");
+
 
     }
 }

@@ -9,6 +9,7 @@
         <module name="NewfoundlandRacer" />
         <module name="NewfoundlandRacer3" />
         <module name="NewfoundlandRacer2" />
+        <module name="NewfoundlandRacer3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="14" />

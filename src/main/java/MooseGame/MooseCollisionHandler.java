@@ -26,6 +26,8 @@ public class MooseCollisionHandler extends CollisionHandler {
     protected void onCollisionBegin(Entity Player, Entity MOOSE) {
         MOOSE.removeFromWorld();
         FXGL.getDialogService().showBox("You hit a moose and died.",NewfoundlandRacerMainMenu.CreateGameOverScreen());
+        play("carcrash.wav");
+
 
 
     }

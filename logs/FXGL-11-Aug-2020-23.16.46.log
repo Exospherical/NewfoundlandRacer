@@ -1,0 +1,88 @@
+23:16:43.573 [main                     ] DEBUG GameApplication      - Logger initialized
+23:16:43.577 [main                     ] DEBUG GameApplication      - Logging settings
+Title: Newfoundland Moose Collision
+Version: 1.0
+Width: 840
+Height: 650
+Fullscreen: false
+Intro: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class MooseGame.NewfoundRacerApp$1
+
+23:16:43.906 [JavaFX Application Thread] DEBUG GameApplication      - Initializing FXGL
+23:16:43.917 [JavaFX Application Thread] INFO  Engine               - FXGL-11.9 (27.05.2020 17.06) on WINDOWS (J:14.0.1 FX:13.0.2)
+23:16:43.917 [JavaFX Application Thread] DEBUG Engine               - JRE Vendor Name: Oracle Corporation
+23:16:43.917 [JavaFX Application Thread] DEBUG Engine               - Running on OS: Windows 10 version 10.0
+23:16:43.917 [JavaFX Application Thread] DEBUG Engine               - Architecture: amd64
+23:16:43.917 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+23:16:43.918 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+23:16:43.998 [JavaFX Application Thread] DEBUG MainWindow           - Creating a JavaFX scene
+23:16:44.037 [JavaFX Application Thread] DEBUG MainWindow           - Target settings size: 840.0 x 650.0
+23:16:44.038 [JavaFX Application Thread] DEBUG MainWindow           - Scaled scene size:    840.0 x 650.0
+23:16:44.038 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+23:16:44.039 [JavaFX Application Thread] DEBUG MainWindow           - Set initial scene to FXGLStartupScene
+23:16:44.046 [JavaFX Application Thread] DEBUG MainWindow           - Opening main window
+23:16:44.125 [JavaFX Application Thread] DEBUG MainWindow           - Window border size: (16.0, 39.0)
+23:16:44.125 [JavaFX Application Thread] DEBUG MainWindow           - Scaled size: 840.0 x 650.0
+23:16:44.125 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+23:16:44.125 [JavaFX Application Thread] DEBUG MainWindow           - Scene size: 840.0 x 650.0
+23:16:44.125 [JavaFX Application Thread] DEBUG MainWindow           - Stage size: 856.0 x 689.0
+23:16:44.132 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing environment variables
+23:16:44.155 [FXGL Background Thread 1 ] DEBUG WindowService        - Applying CSS: fxgl_dark.css
+23:16:44.155 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/css/fxgl_dark.css
+23:16:44.190 [FXGL Background Thread 1 ] DEBUG WindowService        - Initializing application scenes
+23:16:44.214 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+23:16:44.243 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=650, physics.ppm=50.0
+23:16:44.245 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 840x650
+23:16:44.260 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/music/8-Bit-Perplexion.mp3
+23:16:44.381 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/music/Caffeine-Crazed-Coin-Op-Kids.mp3
+23:16:44.387 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@328d1202
+23:16:44.387 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@666f6af5
+23:16:44.455 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/particles/trace_horizontal.png
+23:16:44.481 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyGameMenu()
+23:16:44.489 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+23:16:44.492 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/particles/smoke.png
+23:16:44.528 [FXGL Background Thread 1 ] DEBUG WindowService        - Application scenes initialized
+23:16:44.535 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Loading FXGL system data
+23:16:44.537 [FXGL Background Thread 1 ] DEBUG FileSystemAccess     - Reading from: E:\secondYear\Java\NewfoundlandRacer\system\fxgl.bundle
+23:16:44.541 [FXGL Background Thread 1 ] DEBUG SystemBundleService  - Bundle FXGL: {}
+23:16:44.541 [FXGL Background Thread 1 ] INFO  Engine               - FXGL initialization took: 0.407 sec
+23:16:44.543 [FXGL Background Thread 1 ] DEBUG GameApplication      - Loading localizations
+23:16:44.543 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/english.lang
+23:16:44.552 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/french.lang
+23:16:44.553 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/german.lang
+23:16:44.554 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/hungarian.lang
+23:16:44.555 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/languages/russian.lang
+23:16:44.556 [FXGL Background Thread 1 ] DEBUG GameApplication      - Registering font factories with UI factory
+23:16:44.556 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/VarelaRound-Regular.ttf
+23:16:44.586 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/Abel-Regular.ttf
+23:16:44.589 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/lucida_console.ttf
+23:16:44.593 [FXGL Background Thread 1 ] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/fonts/Courier-Prime.ttf
+23:16:44.601 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Right - D
+23:16:44.601 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Left - A
+23:16:44.601 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Up - W
+23:16:44.601 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Down - S
+23:16:44.601 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/textures/fxgl_icon.png
+23:16:44.615 [JavaFX Application Thread] DEBUG AssetLoaderService   - Loading from file system: /assets/ui/cursors/fxgl_default.png
+23:16:44.617 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - P
+23:16:44.617 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+23:16:44.617 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+23:16:44.618 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+23:16:44.635 [JavaFX Application Thread] DEBUG FXGLStartupScene     - STARTUP
+23:16:44.636 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+23:16:44.641 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from FXGLStartupScene and adding to 
+23:16:44.641 [JavaFX Application Thread] DEBUG MainWindow           - FXGLStartupScene -> 
+23:16:44.641 [JavaFX Application Thread] DEBUG MainWindow           - Push state: NewfoundlandRacerMainMenu
+23:16:44.641 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+23:16:44.648 [JavaFX Application Thread] DEBUG WindowService        - Removing overlay from  and adding to NewfoundlandRacerMainMenu
+23:16:44.648 [JavaFX Application Thread] DEBUG MainWindow           -  -> NewfoundlandRacerMainMenu
+23:16:46.711 [JavaFX Application Thread] DEBUG GameApplication      - Exiting FXGL
+23:16:46.711 [JavaFX Application Thread] DEBUG LoopRunner           - Stopping loop
+23:16:46.711 [JavaFX Application Thread] DEBUG SystemBundleService  - Saving FXGL system data
+23:16:46.713 [JavaFX Application Thread] DEBUG FileSystemAccess     - Writing to: E:\secondYear\Java\NewfoundlandRacer\system\fxgl.bundle
+23:16:46.714 [JavaFX Application Thread] DEBUG GameApplication      - Shutting down background threads
+23:16:46.714 [JavaFX Application Thread] DEBUG GameApplication      - Closing logger and exiting JavaFX
